@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% load static %}
+    <div class="container-inline">
+        <section id="welcomePage">
+            <div id="welcome-message">
+                <h1>Welcome to</h1>
+                <h1>My Music App!</h1>
+            </div>
+            <div class="music-img">
+                <img src="{% static "/images/musicIcons.webp" %}" alt="music-icon">
+            </div>
+        </section>
+
+        <section id="registerPage">
+            <form method="post" action="{% url 'add profile' %}">
+                <fieldset>
+                    <legend>Profile</legend>
+
+                    {{ form }}
+                    <button type="submit" class="register">Enter</button>
+                    {% csrf_token %}
+
+                </fieldset>
+            </form>
+        </section>
+    </div>
+
+{% endblock %}
