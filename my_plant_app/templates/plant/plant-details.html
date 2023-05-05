@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <section id="plant-details">
+        <h1>Plant Details</h1>
+        <div class="info-section">
+            <div class="plant-header">
+                <img class="plant-img"
+                     src="{{ plant.image_url }}"
+                     alt='plant image'/>
+                <h1>{{ plant.type}}</h1>
+                <p><span class="description-plant">Name: {{ plant.name }}</span></p>
+                <p><span class="description-plant">Price: {{ plant.price|floatformat:2 }} $$</span></p>
+                <p><span class="description-plant">Description: {{ plant.description }}</span></p>
+            </div>
+
+            <div class="buttons">
+                <a href="{% url 'edit plant' pk=plant.pk %}" class="edit-button">Edit</a>
+                <a href="{% url 'delete plant' pk=plant.pk %}" class="delete-button">Delete</a>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}

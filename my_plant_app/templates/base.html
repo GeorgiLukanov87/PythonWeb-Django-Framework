@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/style.css"/>
+    <title>MyPlantApp</title>
+</head>
+
+<body>
+<div id="box">
+    <header>
+
+        <h1><a class="index-navigation" href="{% url 'show index' %}">MyPlants</a></h1>
+        <nav>
+            {% if not hide_nav_links %}
+                <a href="{% url 'create profile' %}">Create Profile</a>
+                {% else %}
+                <a href="{% url 'show catalogue' %}">Catalogue</a>
+                <a href="{% url 'create plant' %}">Create Plant</a>
+                <a href="{% url 'details profile' %}">Profile</a>
+            {% endif %}
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div style="font-size:24px;color:red;font-weight: bold">Georgi Lukanov Team 2023 Python Web. All rights reserved.</div>
+    </footer>
+
+</div>
+</body>
+</html>
