@@ -1,19 +1,7 @@
 from django.core import validators
-from django.core.exceptions import ValidationError
 from django.db import models
 
-
-# Raise error if value(Profile username) starts with lower letter.
-def validate_firstname(value):
-    if not value[0].isupper():
-        raise ValidationError("Your name must start with a capital letter!")
-
-
-# Raise if value(plant name) contains digit.
-def validate_plant_name(value):
-    for char in value:
-        if not char.isalpha():
-            raise ValidationError("Plant name should contain only letters!")
+from my_plant_app.web.helper.validators import validate_firstname, validate_plant_name
 
 
 # Profile Model
@@ -66,10 +54,10 @@ class Plant(models.Model):
 
     type = models.CharField(
         max_length=14,
+        choices=PLANTS_TYPES,
+        null=False,
+        blank=False,
     )
-    choices = PLANTS_TYPES,
-    null = False,
-    blank = False,
 
     name = models.CharField(
         max_length=20,
