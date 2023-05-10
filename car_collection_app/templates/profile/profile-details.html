@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <section id="car-details">
+        <h1>Profile Details</h1>
+        <div class="info-section">
+            <div class="car-header">
+                {% if profile.profile_picture %}
+                    <img class="car-img" src="{{ profile.profile_picture }}" alt='profile-image'/>
+                {% else %}
+                    <img class="car-img" src="/static/images/default-profile.png" alt='profile-image'/>
+                {% endif %}
+
+                {% if profile.first_name or profile.last_name %}
+                <h1>{{ profile.first_name}} {{ profile.last_name }}</h1>
+                {% endif %}
+
+                <p class="description">Username: {{ profile.username }}</p>
+                <p class="description">Email: {{ profile.email }}</p>
+                <p class="description">Age: {{ profile.age }}</p>
+                <p class="description">Total price: {{ total_price|floatformat:2 }}$$</p>
+
+                <div class="buttons">
+                    <a href="{% url 'edit profile' %}" class="edit-button">Edit</a>
+                    <a href="{% url 'delete profile' %}" class="delete-button">Delete</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
