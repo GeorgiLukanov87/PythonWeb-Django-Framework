@@ -1,8 +1,20 @@
 from django.shortcuts import render
 
+from recipes_app.my_web.models import Recipe
+
 
 def index(request):
-    return render(request, 'index.html')
+    all_recipes = Recipe.objects.all()
+
+    context = {
+        'all_recipes': all_recipes,
+    }
+
+    return render(
+        request,
+        'index.html',
+        context,
+    )
 
 
 def create(request):
