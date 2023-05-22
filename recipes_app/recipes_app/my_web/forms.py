@@ -16,9 +16,11 @@ class RecipeEditForm(RecipeBaseForm):
 class RecipeCreateForm(RecipeBaseForm):
     pass
 
+
 class RecipeDeleteForm(RecipeBaseForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.__disable_fields()
 
     def save(self, commit=True):
         if commit:
