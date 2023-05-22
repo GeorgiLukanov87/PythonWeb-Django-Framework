@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+from recipes_app.my_web.forms import RecipeCreateForm
 from recipes_app.my_web.models import Recipe
 
 
@@ -18,7 +19,23 @@ def index(request):
 
 
 def create(request):
-    return render(request, 'create.html')
+    if request.method == 'GET':
+        form = RecipeCreateForm()
+    else:
+        form = RecipeCreateForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
+    context = {
+        'form': form,
+    }
+
+    return render(
+        request,
+        'create.html',
+        context,
+    )
 
 
 def edit(request, pk):
