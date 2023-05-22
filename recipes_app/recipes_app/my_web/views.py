@@ -85,7 +85,7 @@ def delete(request, pk):
 def details(request, pk):
     recipe = Recipe.objects.get(pk=pk)
     print(recipe.ingredients)
-    ingredients = recipe.ingredients.split(' ')
+    ingredients = recipe.ingredients.split(', ')
 
     context = {
         'recipe': recipe,

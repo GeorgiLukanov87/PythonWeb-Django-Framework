@@ -31,4 +31,4 @@ class RecipeDeleteForm(RecipeBaseForm):
     def __disable_fields(self):
         for _, field in self.fields.items():
             field.widget.attrs['readonly'] = 'readonly'
-            field.widget.attrs['disabled'] = 'disabled'
+
