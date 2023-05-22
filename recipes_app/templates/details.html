@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
     <div class="container">
@@ -9,7 +10,7 @@
                 <h2>Homemade Chicken Soup</h2>
                 <img class="detail-img" src="https://i.ytimg.com/vi/o91gT73mQhg/maxresdefault.jpg" alt="recipe-image">
                 <div class="time">
-                    <img src="./static/images/clock.png">
+                    <img src="{% static 'images/clock.png' %}">
                     <p>30min</p>
                 </div>
                 <h3>Ingredients</h3>
