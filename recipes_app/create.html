@@ -1,0 +1,41 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>Recipes</title>
+</head>
+
+<body>
+     
+ <nav>
+    <ul>
+        <img src="./static/images/chef.png" alt="chef">
+        <li class="title"><a href="/">Recipes</a></li>
+        <li><a href="/create">Add Recipe</a></li>
+    </ul>
+</nav>
+    <div class="container">
+        
+<h1>Create Recipe</h1>
+<div class="items-container">
+    <div class="item">
+        <form method="POST">
+            <label for="title">Title</label>
+            <input type="text" name="title" maxlength="30" required="" id="id_title">
+            <label for="imageURL">Image URL</label>
+            <input type="url" name="image_url" maxlength="200" required="" id="id_image_url">
+            <label for="description">Description</label>
+            <textarea name="description" cols="40" rows="10" required="" id="id_description"></textarea>
+            <label for="ingredients">Ingredients</label>
+            <input type="text" name="ingredients" maxlength="250" required="" id="id_ingredients">
+            <label for="time">Time (Minutes)</label>
+            <input type="number" name="time" required="" id="id_time">
+            <input type="submit" value="Create">
+        </form>
+    </div>
+</div>
+
+    </div>
+
+
+</body></html>
