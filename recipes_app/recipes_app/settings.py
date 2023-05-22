@@ -6,8 +6,7 @@ SECRET_KEY = 'django-insecure-)^(_^4154&*p@m1rrpt5h^l19^g9dfozqxsb$r=kx@t4=p$z1*
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -88,6 +87,5 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'staticfiles']
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
