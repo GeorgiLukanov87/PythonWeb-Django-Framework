@@ -8,58 +8,20 @@
     <title>Petstagram</title>
 </head>
 <body>
-<header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="{% url 'show index' %}">
-                    <img width="50px" src="{% static 'images/free-30-instagram-stories-icons23_122570.png' %}"
-                         alt="img1">
-                </a>
 
-                <a class="home" href="{% url 'show index' %}">
-                    <i>Petstagram</i>
-                </a>
-            </div>
+{% include 'partials/navbar.html' %}
 
-            <div class="nav-links">
-                <ul class="nav-group">
-                    <li class="nav-item">
+<main>
 
-                        <a href="{% url 'add pet' %}">
-                            <i>Add Pet</i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
+    {% block content %}
+    {% endblock %}
 
-                        <a href="{% url 'add photo' %}">
-                            <i>Add Photo</i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
+</main>
 
-                        <a href="{% url 'login' %}">
-                            <i>Login</i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-
-                        <a href="{% url 'register' %}">
-                            <i>Register</i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
-{% block content %}
-{% endblock %}
 
 <div class="footer">
-		<span class="footer-section">
-			© 2022 SOFTUNI WORKSHOP FOR PYTHON WEB MODULE
+		<span style="color:red;font-size: 20px;font-weight: bold" class="footer-section">
+			© 2023 G.Lukanov!
 		</span>
 </div>
 

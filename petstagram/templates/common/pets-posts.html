@@ -1,50 +1,62 @@
 {% load static %}
-<div class="card">
-    <div class="top">
-        <!-- User Details and image location -->
-        <div class="userDetails">
-            <a href="{% url 'profile details' pk=1 %}">
-                <div class="profilepic">
-                    <div class="profile_img">
-                        <div class="image">
-                            <img src="{% static '/images/person.png' %}" alt="img8">
+{% for photo in all_photos %}
+    <!-- Start Pet Photos Post Section -->
+    <!-- Start First Pet Photo Post -->
+    <div class="card">
+
+        <!-- Start User Details and Image Location -->
+        <div class="top">
+            <div class="userDetails">
+                <!-- Link to User Profile Page -->
+                <a href="#">
+                    <div class="profilepic">
+                        <div class="profile_img">
+                            <div class="image">
+                                <img src="{% static 'images/person.png' %}" alt="img8">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-            <h3>
-                <a href="{% url 'profile details' pk=1 %}">
-                    <!-- if user has first name and last name -->
-                    Diyan Kalaydzhiev
-                    <!-- else -->
-                    <!-- user username -->
                 </a>
-                <br>
-                <!-- if the photo has location -->
-                <span>Bansko, Bulgaria</span>
-            </h3>
+                <h3>
+                    <!-- Link to User Profile Page -->
+                    <a href="#">
+                        <!-- if user has first name and last name -->
+                        Diyan Kalaydzhiev
+                        <!-- else -->
+                        <!-- show user username -->
+                    </a>
+                    <br>
+                    <!-- if the photo has location -->
+                    {% if photo.location %}
+                        <span>{{ photo.location }}</span>
+                    {% endif %}
+                </h3>
+            </div>
         </div>
-        <!--  -->
-    </div>
-    <!-- Post image -->
-    <div class="imgBx" id="place the id of the photo here">
-        <img src="{% static '/images/axolotl.jpeg' %}" alt="post" class="cover">
-    </div>
+        <!-- End User Details and Image Location -->
 
-    <div class="bottom">
-        <!-- like and share buttons -->
-        <div class="actionBtns">
-            <div class="left">
-								<span class="heart">
-									<a href="like">
+        <!-- Start Pet Photo -->
+        <div class="imgBx" id="photo-{{ photo.id }}">
+            <img src="{{ photo.photo.url }}" alt="post" class="cover">
+        </div>
+        <!-- End Pet Photo -->
+
+        <!-- Start Like and Share Buttons -->
+        <div class="bottom">
+            <div class="actionBtns">
+                <div class="left">
+                    <!-- Start Like Button -->
+                    <span class="heart">
+									<a href="{% url 'like' photo.id %}">
 										<!-- if user has liked the photo -->
-                                        <svg style="color: red"
-                                             xmlns="http://www.w3.org/2000/svg"
-                                             width="24"
-                                             height="24"
-                                             fill="currentColor"
-                                             class="bi bi-heart-fill"
-                                             viewBox="0 0 16 16">
+                                        {% if photo.like_set.all %}
+                                            <svg style="color: red"
+                                                 xmlns="http://www.w3.org/2000/svg"
+                                                 width="24"
+                                                 height="24"
+                                                 fill="currentColor"
+                                                 class="bi bi-heart-fill"
+                                                 viewBox="0 0 16 16">
                                             <!-- Coordinate path -->
                                             <path fill-rule="evenodd"
                                                   d="M8 1.314C12.438-3.248 23.534 4.735
@@ -53,14 +65,16 @@
 
                                             </path>
                                         </svg>
-                                        <!-- else -->
-                                        <svg aria-label="Like"
-                                             color="#262626"
-                                             fill="#262626"
-                                             height="24"
-                                             role="img"
-                                             viewBox="0 0 48 48"
-                                             width="24">
+                                            <!-- else -->
+                                        {% else %}
+                                            <svg aria-label="Like"
+                                                 color="#262626"
+                                                 fill="#262626"
+                                                 height="24"
+                                                 role="img"
+                                                 viewBox="0 0 48 48"
+                                                 width="24">
+
                                         <!-- Coordinate path -->
                                         <path d="M34.6 6.1c5.7 0 10.4 5.2 10.4
                                                     11.5 0 6.8-5.9 11-11.5 16S25 41.3 24
@@ -75,61 +89,75 @@
                                                     7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6
                                                     48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
                                         </path>
-                                    </svg>
+                                        </svg>
+                                        {% endif %}
 								</a>
 								</span>
-                </span>
-                <a href="share">
-                    <svg aria-label="Share Post" class="_8-yf5 " color="#262626" fill="#262626"
-                         height="24" role="img" viewBox="0 0 48 48" width="24">
-                        <path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3
+                    <!-- End Like Button -->
+
+                    <!-- Start Share Button -->
+                    <a href="{% url 'show photo details' photo.id %}">
+                        <svg aria-label="Share Post" class="_8-yf5 " color="#262626" fill="#262626"
+                             height="24" role="img" viewBox="0 0 48 48" width="24">
+                            <path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3
 										3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6
 										1 1.2 1.1h.2c.5 0 1-.3
 										1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2
 										6.1h35.5L18 18.7 5.2 6.1zm18.7
 										33.6l-4.4-18.4L42.4 8.6 23.9 39.7z">
-                        </path>
-                    </svg>
+                            </path>
+                        </svg>
+                    </a>
+                    <!-- End Share Button -->
+
+                </div>
+            </div>
+            <!-- End Like and Share Buttons -->
+
+            <!-- Number of Likes per Photo -->
+            <p class="likes">{{ photo.like_set.count }} Likes</p>
+
+
+            <!-- Start Tagged Pets -->
+            {% for pet in photo.tagged_pets.all %}
+                <!-- Link to First Tagged Pet Details Page-->
+                <a href="{% url 'show pet details' 'username' pet.slug %}">
+                    <p class="message">
+                        <b>{{ pet.name }}</b>
+                    </p>
                 </a>
+            {% endfor %}
+            <!-- End Tagged Pets -->
+
+            <!-- Link to Photo Details Page -->
+            <a href="{% url 'show photo details' photo.id %}">
+                <h4 class="details">See details</h4>
+            </a>
+
+            <!-- Date of Publication -->
+            <h5 class="postTime">{{ photo.date_of_publication }}</h5>
+
+            <!-- Start Add Comments Section -->
+            <div class="addComments">
+                <div class="reaction">
+                    <h3>
+                        <i class="far fa-smile"></i>
+                    </h3>
+                </div>
+                <!-- Start Add Comments Form -->
+                <form method="post" action="{% url 'add comment' photo.id %}">
+                    {{ comment_form }}
+                    {% csrf_token %}
+                    <button type="submit">Post</button>
+                </form>
+                <!-- End Add Comments Form -->
+
             </div>
-        </div>
+            <!-- End Add Comments Section -->
 
-        <a href="#">
-            <p class="likes">203 likes</p>
-        </a>
-
-        <!-- tagged pets -->
-        <a href="pet profile">
-            <p class="message">
-                <b>Sasho</b>
-            </p>
-        </a>
-        <a href="pet profile">
-            <p class="message">
-                <b>Some other fish</b>
-            </p>
-        </a>
-
-        <a href="post details">
-            <h4 class="details">See details</h4>
-        </a>
-
-        <h5 class="postTime">19/09/2022</h5>
-
-        <!-- add comments section -->
-        <div class="addComments">
-            <div class="reaction">
-                <h3>
-                    <i class="far fa-smile"></i>
-                </h3>
-            </div>
-            <form method="post" action="add comment">
-                <label for="id_body">Body:</label>
-                <textarea name="body" cols="40" rows="10" placeholder="Add comment..." maxlength="300"
-                          required="" id="id_body"></textarea>
-                <button type="submit">Post</button>
-            </form>
         </div>
     </div>
-</div>
+    <!-- End First Pet Photo Post -->
 
+    <!-- End Pet Photos Post Section -->
+{% endfor %}

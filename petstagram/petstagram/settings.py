@@ -1,3 +1,4 @@
+import os.path
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -65,7 +66,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "petstagram_workshop_db",
         "USER": "postgres",
-        "PASSWORD": "mypass12345",
+        "PASSWORD": "******",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
@@ -101,3 +102,7 @@ STATICFILES_DIRS = (
 )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
