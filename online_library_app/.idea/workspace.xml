@@ -1,27 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c24c0f06-bd31-41ce-89b9-6ec4dbdd71e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/add-book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/book-details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/delete-profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/edit-book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/edit-profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home-no-profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home-with-profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online_library_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online_library_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online_library_app/my_web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/my_web/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +43,22 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jorge\Desktop\GitHub SoftUni\PythonWeb-Django-Framework\online_library_app\templates\profile" />
+      <recent name="C:\Users\Jorge\Desktop\GitHub SoftUni\PythonWeb-Django-Framework\online_library_app\templates\book" />
+      <recent name="C:\Users\Jorge\Desktop\GitHub SoftUni\PythonWeb-Django-Framework\online_library_app\templates\common" />
+      <recent name="C:\Users\Jorge\Desktop\GitHub SoftUni\PythonWeb-Django-Framework\online_library_app" />
+      <recent name="C:\Users\Jorge\Desktop\GitHub SoftUni\PythonWeb-Django-Framework\online_library_app\online_library_app" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="online_library_app" type="Python.DjangoServer" factoryName="Django server">
       <module name="online_library_app" />
@@ -95,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684833333464</updated>
-      <workItem from="1684833364495" duration="284000" />
+      <workItem from="1684833364495" duration="587000" />
     </task>
     <servers />
   </component>
