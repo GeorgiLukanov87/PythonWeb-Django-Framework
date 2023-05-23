@@ -5,7 +5,6 @@ from notes_app.my_web.views import index, add_note, edit_note, delete_note, deta
 # http://localhost:8000/ - home page
 
 # http://localhost:8000/add - add note page
-
 # http://localhost:8000/edit/1 - edit note page
 # http://localhost:8000/delete/1 - delete note page
 # http://localhost:8000/details/1 - note details page
