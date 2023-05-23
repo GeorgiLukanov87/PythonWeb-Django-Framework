@@ -13,6 +13,9 @@ class Profile(models.Model):
     )
     image_url = models.URLField()
 
+    def __str__(self):
+        return f'Name={self.first_name}, Last name={self.last_name}, id={self.id}'
+
 
 class Book(models.Model):
     BOOK_TITLE_MAX_LEN = 30
@@ -26,3 +29,6 @@ class Book(models.Model):
     type = models.CharField(
         max_length=BOOK_TYPE_MAX_LEN,
     )
+
+    def __str__(self):
+        return f'Book title={self.title}, id={self.id}, type={self.type}'

@@ -1,15 +1,29 @@
 from django.shortcuts import render
 
+from online_library_app.my_web.forms import ProfileCreateForm
+from online_library_app.my_web.models import Profile
+
 
 # Create your views here.
 
 def index(request):
-    profile = False
+    profile = Profile.objects.first()
 
     if profile:
         return render(request, 'common/home-with-profile.html')  # Dashboard
     else:
-        return render(request, 'common/home-no-profile.html')
+        if request.method == 'POST':
+            form = ProfileCreateForm()
+            if form.is_valid():
+                form.save()
+                context = {
+                    'form': form,
+                }
+                return render(
+                    request,
+                    'common/home-no-profile.html',
+                    context,
+                )
 
 
 # book's views

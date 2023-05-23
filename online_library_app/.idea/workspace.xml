@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c24c0f06-bd31-41ce-89b9-6ec4dbdd71e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/online_library_app/my_web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/my_web/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/online_library_app/my_web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/my_web/views.py" afterDir="false" />
     </list>
@@ -20,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -96,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684833333464</updated>
-      <workItem from="1684833364495" duration="1931000" />
+      <workItem from="1684833364495" duration="2651000" />
     </task>
     <servers />
   </component>
