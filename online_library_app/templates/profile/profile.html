@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        <!-- Profile Page -->
         <section id="profile-page" class="details">
             <div class="profile-information">
-                <h3>Peter Tomov</h3>
-                <p class="img"><img src="https://thumbs.dreamstime.com/b/profile-picture-vector-perfect-social-media-other-web-use-125320533.jpg" alt=""></p>
+                <h3>{{ profile.first_name }} {{ profile.last_name }}</h3>
+                <p class="img"><img src="{{ profile.image_url }}" alt=""></p>
                 <div class="actions">
-                    <a class="button" href="#">Edit</a>
-                    <a class="button" href="#">Delete</a>
+                    <a class="button" href="{% url 'edit-profile' %}">Edit</a>
+                    <a class="button" href="{% url 'delete-profile' %}">Delete</a>
                 </div>
             </div>
         </section>

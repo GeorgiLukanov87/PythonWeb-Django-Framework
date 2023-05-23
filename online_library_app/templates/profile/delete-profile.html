@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        <!-- Edit Profile Page -->
-        <section id="edit-profile-page" class="edit">
-            <form id="edit-form" action="#" method="">
-                <fieldset>
-                    <legend>Delete Profile</legend>
-                    <label for="first-name">First Name</label>
-                    <input type="text" name="first-name" id="first-name" value="Peter" disabled="">
-                    <label for="last-name">Last name</label>
-                    <input type="text" name="last-name" id="last-name" value="Tomov" disabled="">
-                    <label for="image-url">Image URL</label>
-                    <input type="url" name="image-url" id="image-url" value="https://thumbs.dreamstime.com/b/profile-picture-vector-perfect-social-media-other-web-use-125320533.jpg" disabled="">
-                    <input class="button submit" type="submit" value="Delete">
-                </fieldset>
-            </form>
-        </section>
+    <!-- Edit Profile Page -->
+    <section id="edit-profile-page" class="edit">
+        <form id="edit-form" action="{% url 'delete-profile' %}" method="post">
+            <fieldset>
+                {{ form }}
+                {% csrf_token %}
+                <input class="button submit" type="submit" value="Delete">
+            </fieldset>
+        </form>
+    </section>
 
 {% endblock %}
