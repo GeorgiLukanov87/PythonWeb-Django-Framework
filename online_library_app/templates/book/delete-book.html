@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        <!-- Edit Book Page -->
-        <section id="edit-page" class="edit">
-            <form id="edit-form" method="post">
-                <fieldset>
-                    <legend>Delete Book</legend>
+    <!-- Edit Book Page -->
+    <section id="edit-page" class="edit">
+        <form id="edit-form" method="post" action="{% url 'delete-book' pk=book.pk %}">
+            <fieldset>
+                <legend>Delete Book</legend>
 
-                    <input class="button submit" type="submit" value="Delete">
-                </fieldset>
-            </form>
-        </section>
+                {{ form }}
+                {% csrf_token %}
+
+                <input class="button submit" type="submit" value="Delete">
+            </fieldset>
+        </form>
+    </section>
 
 {% endblock %}

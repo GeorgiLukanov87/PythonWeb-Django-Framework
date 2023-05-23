@@ -8,7 +8,7 @@
             <p class="img"><img src="{{ book.image }}" alt="{{ book.title }}"></p>
             <div class="actions">
                 <a class="button" href="{% url 'edit-book' pk=book.pk %}">Edit</a>
-                <a class="button" href="#">Delete</a>
+                <a class="button" href="{% url 'delete-book' pk=book.pk %}">Delete</a>
             </div>
         </div>
         <div class="book-description">

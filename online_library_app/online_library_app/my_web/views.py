@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from online_library_app.my_web.forms import ProfileCreateForm, ProfileEditForm, ProfileDeleteForm, BookCreateForm, \
-    BookEditForm
+    BookEditForm, BookDeleteForm
 from online_library_app.my_web.models import Profile, Book
 
 
@@ -160,5 +160,27 @@ def details_book(request, pk):
     return render(
         request,
         'book/book-details.html',
+        context,
+    )
+
+
+def delete_book(request, pk):
+    book = Book.objects.filter(pk=pk).get()
+    if request.method == 'GET':
+        form = BookDeleteForm(instance=book)
+    else:
+        form = BookDeleteForm(request.POST, instance=book)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
+    context = {
+        'book': book,
+        'form': form,
+    }
+
+    return render(
+        request,
+        'book/delete-book.html',
         context,
     )

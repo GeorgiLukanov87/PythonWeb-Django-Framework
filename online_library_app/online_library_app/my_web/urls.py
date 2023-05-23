@@ -10,7 +10,7 @@
 from django.urls import path, include
 
 from online_library_app.my_web.views import index, add_book, edit_book, details_book, profile_page, edit_profile, \
-    delete_profile, create_profile
+    delete_profile, create_profile, delete_book
 
 urlpatterns = (
     path('', index, name='index'),
@@ -18,6 +18,7 @@ urlpatterns = (
     path('add/', add_book, name='add-book'),
     path('edit/<int:pk>/', edit_book, name='edit-book'),
     path('details/<int:pk>/', details_book, name='details-book'),
+    path('delete/<int:pk>/', delete_book, name='delete-book'),
 
     path('profile/', include([
         path('', profile_page, name='profile-page'),
