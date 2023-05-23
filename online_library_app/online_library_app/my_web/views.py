@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    profile = True
+    profile = False
 
     if profile:
         return render(request, 'common/home-with-profile.html')  # Dashboard
