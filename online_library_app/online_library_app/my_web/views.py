@@ -2,7 +2,11 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'common/home-no-profile.html')
+    profile = None
+    if profile is None:
+        return render(request, 'common/home-no-profile.html')
+    else:
+        return render(request, 'common/home-with-profile.html')
 
 
 # book's views
