@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c24c0f06-bd31-41ce-89b9-6ec4dbdd71e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/online_library_app/my_web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/my_web/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online_library_app/my_web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/my_web/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/book/book-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/book/book-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online_library_app/my_web/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/my_web/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online_library_app/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/book/delete-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/book/delete-book.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,87 @@
       <recent name="C:\Users\Jorge\Desktop\GitHub SoftUni\PythonWeb-Django-Framework\online_library_app\online_library_app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.online_library_app">
+    <configuration name="Test: online_library_app.my_web.tests.BookModelTestCase" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="online_library_app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="online_library_app.my_web.tests.BookModelTestCase" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: online_library_app.my_web.tests.MyViewsTestCase" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="online_library_app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="online_library_app.my_web.tests.MyViewsTestCase" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: online_library_app.my_web.tests.ProfileModelTestCase" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="online_library_app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="online_library_app.my_web.tests.ProfileModelTestCase" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: online_library_app.my_web.tests.ProfileModelTestCase.test_profile_model" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="online_library_app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="online_library_app.my_web.tests.ProfileModelTestCase.test_profile_model" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="online_library_app" type="Python.DjangoServer" factoryName="Django server">
       <module name="online_library_app" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,6 +170,14 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: online_library_app.my_web.tests.MyViewsTestCase" />
+        <item itemvalue="Django tests.Test: online_library_app.my_web.tests.BookModelTestCase" />
+        <item itemvalue="Django tests.Test: online_library_app.my_web.tests.ProfileModelTestCase.test_profile_model" />
+        <item itemvalue="Django tests.Test: online_library_app.my_web.tests.ProfileModelTestCase" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -96,7 +187,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684833333464</updated>
-      <workItem from="1684833364495" duration="8831000" />
+      <workItem from="1684833364495" duration="9998000" />
     </task>
     <servers />
   </component>
@@ -105,5 +196,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/online_library_app$Test__online_library_app_my_web_tests_MyViewsTestCase.coverage" NAME="Test: online_library_app.my_web.tests.MyViewsTestCase Coverage Results" MODIFIED="1684843362734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/online_library_app$Test__online_library_app_my_web_tests_ProfileModelTestCase_test_profile_model.coverage" NAME="Test: online_library_app.my_web.tests.ProfileModelTestCase.test_profile_model Coverage Results" MODIFIED="1684843350981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/online_library_app$Test__online_library_app_my_web_tests_BookModelTestCase.coverage" NAME="Test: online_library_app.my_web.tests.BookModelTestCase Coverage Results" MODIFIED="1684843353171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/online_library_app$Test__online_library_app_my_web_tests_ProfileModelTestCase.coverage" NAME="Test: online_library_app.my_web.tests.ProfileModelTestCase Coverage Results" MODIFIED="1684843347664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

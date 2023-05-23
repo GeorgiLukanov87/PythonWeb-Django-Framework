@@ -16,7 +16,11 @@
             <section class="navbar-dashboard">
                 <a href="{% url 'index' %}">Dashboard</a>
                 <div id="user">
-                    <span>Welcome, {{ profile.fist_name }}</span>
+
+                    {% if profile %}
+                        <span>Welcome, {{ profile.first_name }}</span>
+                    {% endif %}
+
                     <a class="button" href="{% url 'profile-page' %}">Profile</a>
                     <a class="button" href="{% url 'add-book' %}">Add Book</a>
                 </div>
@@ -24,10 +28,9 @@
         </nav>
     </header>
 
-
     {% block content %}
+        {# information from inherited htmls here !#}
     {% endblock %}
-
 
     <footer id="site-footer">
         <p>G.Lukanov Team !</p>

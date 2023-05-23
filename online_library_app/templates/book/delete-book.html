@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <!-- Edit Book Page -->
+    <!-- Delete Book Page with same css as edit/ -->
     <section id="edit-page" class="edit">
         <form id="edit-form" method="post" action="{% url 'delete-book' pk=book.pk %}">
             <fieldset>
