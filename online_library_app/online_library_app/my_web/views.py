@@ -3,10 +3,10 @@ from django.shortcuts import render
 
 def index(request):
     profile = None
-    if profile is None:
-        return render(request, 'common/home-no-profile.html')
-    else:
+    if profile:
         return render(request, 'common/home-with-profile.html')
+    else:
+        return render(request, 'common/home-no-profile.html')
 
 
 # book's views
