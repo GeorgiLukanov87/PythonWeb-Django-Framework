@@ -1,24 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        <!-- Details Page -->
-        <section id="details-page" class="details">
-            <div class="book-information">
-                <h3>A Court of Thorns and </h3>
-                <p class="type">Type: Fiction</p>
-                <p class="img"><img src="https://images-na.ssl-images-amazon.com/images/I/81Z-yHX8OcL.jpg" alt=""></p>
-                <div class="actions">
-                    <a class="button" href="#">Edit</a>
-                    <a class="button" href="#">Delete</a>
-                </div>
+    <section id="details-page" class="details">
+        <div class="book-information">
+            <h3>Book Title: {{ book.title }}</h3>
+            <p class="type">Book Type: {{ book.type }}</p>
+            <p class="img"><img src="{{ book.image }}" alt="{{ book.title }}"></p>
+            <div class="actions">
+                <a class="button" href="{% url 'edit-book' pk=book.pk %}">Edit</a>
+                <a class="button" href="#">Delete</a>
             </div>
-            <div class="book-description">
-                <h3>Description:</h3>
-                <p>Feyre's survival rests upon her ability to hunt and kill; the forest where she lives is a cold,
-                    bleak place in the long winter months. So when she spots a deer in the forest being pursued by a
-                    wolf, she cannot resist fighting it for the flesh. But to do so, she must kill the predator, and
-                    killing something so precious comes at a price.</p>
-            </div>
-        </section>
+        </div>
+        <div class="book-description">
+            <h3>Description:</h3>
+            <p>{{ book.description }}</p>
+        </div>
+    </section>
 
 {% endblock %}
