@@ -1,4 +1,3 @@
-
 # http://localhost:8000/ - home page
 
 # http://localhost:8000/add/ - add book page
@@ -11,7 +10,7 @@
 from django.urls import path, include
 
 from online_library_app.my_web.views import index, add_book, edit_book, details_book, profile_page, edit_profile, \
-    delete_profile
+    delete_profile, create_profile
 
 urlpatterns = (
     path('', index, name='index'),
@@ -24,5 +23,6 @@ urlpatterns = (
         path('', profile_page, name='profile-page'),
         path('edit/', edit_profile, name='edit-profile'),
         path('delete/', delete_profile, name='delete-profile'),
+        path('create/', create_profile, name='create-profile'),
     ]))
 )
