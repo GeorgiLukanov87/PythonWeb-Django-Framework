@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+body {
+    background: #f7f7f7;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: ghostwhite;
+}
+
+/* navigation bar layout and style */
+nav {
+    background: #474c55;
+    height: 60px;
+}
+/* navigation bar how items display */
+nav ul {
+    display: flex;
+}
+
+/* navigation bar inside items */
+nav ul li,
+nav ul li a {
+    color: ghostwhite;
+    text-decoration: none;
+    list-style: none;
+    font-size: 30px;
+/* Padding is used to create space around an element's content,
+inside of any defined borders. */
+    padding: 6px;
+/* Create space from the top to the element. */
+    margin-top: 6px;
+}
+
+/*navigation bar right items positioning */
+nav ul li.right {
+    position: absolute;
+    right: 30px;
+}
+/*navigation bar right items */
+nav ul li.right a {
+    font-size: 20px;
+    margin: 3.5px auto;
+}
+
+/*navigation bar img area */
+nav ul li.img {
+    margin-top: 6px;
+}
+
+/*heading 1 and 2 */
+h1, h2 {
+    text-align: center;
+}
+
+
+/*data form with boxes to write - profile and notes
+<div class="form"> in the html file*/
+.form {
+    background-color: #91cccc;
+    /* space around an element's content inside of any defined borders. */
+    padding: 35px;
+    /* width of the box */
+    width: 35%;
+    margin: 2% auto 10% auto;
+}
+
+/*data form where you enter data - profile and notes*/
+input[type=text],
+input[type=url],
+input[type=number],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 5px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* all other buttons */
+input[type=submit],
+.button {
+    background-color: #91cccc;
+    text-decoration: underline;
+    color: 	black;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    display: block;
+    margin: 15px auto 0;
+}
+
+/* all buttons when the mouse is on them */
+input[type=submit]:hover,
+.button:hover {
+    background-color: #5996bc;
+    text-decoration: underline;
+}
+
+/* style of edit button */
+input[type=edit],
+.button.edit {
+    background-color: #ffe8ba;
+    height: 22px;
+    text-align: center;
+}
+
+/* style of delete button */
+input[type=delete],
+.button.delete {
+    background: #ffe8ba;
+    height: 22px;
+    text-align: center;
+}
+
+/* style of details button */
+input[type=details],
+.button.details {
+    background: #ffe8ba;
+    height: 22px;
+    text-align: center;
+}
+
+/* style when the mousse is on the delete, edit and details button */
+input[type=details]:hover,
+input[type=delete]:hover,
+input[type=edit]:hover,
+.button.details:hover,
+.button.delete:hover,
+.button.edit:hover{
+    background-color: #ffcb63;
+    text-decoration: underline;
+
+}
+
+/* the boxes for notes and profile layout */
+.note-container {
+    display: -moz-box;
+    justify-content: center;
+    margin: auto auto 30px;
+}
+
+/* the boxes inside area*/
+.note-container,
+.note-list {
+    width: 80%;
+    -webkit-box-shadow: 10px 10px 10px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 10px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 10px -9px rgba(0, 0, 0, 0.75);
+    border-radius: 2px;
+    padding: 20px;
+    background: #ffe8ba;
+}
+
+/* the heading of the box */
+.note-container h2 {
+    text-align: left;
+}
+
+
+/* image in the box - i want it on the top right in one line with the heading*/
+.note-container img{
+    width: 100px;
+    max-height: 100px;
+    float: right;
+}
+
+/* paragraph in the profile box - "all notes"
+I want to be in the center bottom of the box */
+.note-container div p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* "age" in profile */
+.note-container p{
+    font-size: 20px;
+
+}
+
+/*       NEW!!!!!
+
+box for note details layout */
+.note-details-container{
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 2% auto 10% auto;
+    background: #ffe8ba;
+}
+
+/* the boxes inside area*/
+.note-details-container,
+.note-list {
+    width: 80%;
+    -webkit-box-shadow: 10px 10px 10px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 10px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 10px -9px rgba(0, 0, 0, 0.75);
+    border-radius: 2px;
+    padding: 20px;
+}
+
+/* the heading of the box */
+.note-details-container h2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: Georgia, serif;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: overline solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: capitalize;
+}
+
+
+/* image in the box details*/
+.note-details-container img{
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+.note-details-container div p{
+    font-size: 25px;
+    font-style: italic;
+}
+.note-details-container p{
+    font-size: 18px;
+    font-style: normal;
+}
+
+/* for all class right items like Profile button in the navigation bar */
+.right {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* footer style and layout */
+footer {
+    position: fixed;
+    bottom: 0;
+    background: #474c55;
+    width: 100%;
+    padding: 15px 0;
+}
+
+/* footer inside items */
+footer div {
+    text-align: center;
+    color: ghostwhite;
+}

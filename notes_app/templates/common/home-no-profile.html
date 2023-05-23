@@ -1,0 +1,53 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        <title>Notes</title>
+    </head>
+
+    <body>
+        <!--navigation bar-->
+        <header>
+            <nav>
+                <ul>
+                    <li class="img"><img src="/static/images/note.png" width="32" height="32" /></li>
+
+                    <li><a href="/">Notes</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--end navigation bar-->
+
+        <div class="body">
+            <!--headings-->
+            <h1>Enter Your Data</h1>
+            <!--end headings-->
+
+            <!--profile data form-->
+            <div class="form">
+                <form method="POST">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="97MmAxmrs7yPXUamEdIgRY80OHEP383f6VukAC6agPNIW60LqTcnIQlM6YCYPjc0" />
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="first_name" maxlength="15" required="" id="id_first_name" />
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="last_name" maxlength="15" required="" id="id_last_name" />
+
+                    <label for="age">Age</label>
+                    <input type="number" name="age" required="" id="id_age" />
+
+                    <label for="profilePhoto">Link to Profile Image</label>
+                    <input type="url" name="profile_image" required="" id="id_image" />
+
+                    <input type="submit" value="SUBMIT" />
+                </form>
+            </div>
+            <!--end profile data form-->
+        </div>
+
+        <footer>
+            <div>Python Web Basics Exam @SoftUni</div>
+        </footer>
+    </body>
+</html>

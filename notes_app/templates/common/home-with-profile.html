@@ -1,0 +1,56 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        <title>Notes</title>
+    </head>
+
+    <body>
+        <!--navigation bar-->
+        <header>
+            <nav>
+                <ul>
+                    <li class="img"><img src="/static/images/note.png" /></li>
+                    <li><a href="/">Notes</a></li>
+                    <li class="right">
+                        <a href="/add">Add Note</a>
+                        <a href="/profile">Profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!--end navigation bar-->
+
+        <h1>My Notes</h1>
+
+
+        <h2>There are no notes.</h2>
+        <!--notes container-->
+        <div class="note-container">
+            <h2>Today's Tasks <img src="https://www.freeiconspng.com/thumbs/tasks-icon/tasks-icon-9.png" /></h2>
+
+            <div class="right">
+                <a class="button details" href="/details/3">Details</a>
+                <a class="button edit" href="/edit/3">Edit</a>
+                <a class="button delete" href="/delete/3">Delete</a>
+            </div>
+        </div>
+
+        <div class="note-container">
+            <h2>Python Web Basics <img src="https://about.softuni.bg/Content/images/home-page/softuni-logo.svg" /></h2>
+
+            <div class="right">
+                <a class="button details" href="/details/4">Details</a>
+                <a class="button edit" href="/edit/4">Edit</a>
+                <a class="button delete" href="/delete/4">Delete</a>
+            </div>
+        </div>
+
+        <!--end notes container-->
+
+        <footer>
+            <div>Python Web Basics Exam @SoftUni</div>
+        </footer>
+    </body>
+</html>

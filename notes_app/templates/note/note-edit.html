@@ -1,0 +1,55 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        <title>Notes</title>
+    </head>
+
+    <body>
+        <!--navigation bar-->
+        <header>
+            <nav>
+                <ul>
+                    <li class="img"><img src="/static/images/note.png" /></li>
+                    <li><a href="/">Notes</a></li>
+                    <li class="right">
+                        <a href="/add">Add Note</a>
+                        <a href="/profile">Profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!--end navigation bar-->
+
+        <div class="body">
+            <!--headings-->
+            <h1>Edit Note</h1>
+            <!--headings-->
+
+            <!--note edit data form-->
+            <div class="form">
+                <form method="POST">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="E8qoLvlyiXBfE7NlcyWlXe1TMWV5qvo7BW8mLA5h6FQ8DjDKYeqsO6eF4dTecGxS" />
+                    <label for="name">Title</label>
+                    <input type="text" name="title" value="Today's Tasks" maxlength="50" required="" id="id_title" />
+
+                    <label for="content">Content</label>
+                    <textarea name="description" cols="40" rows="10" required="" id="id_description">Today I need to go shopping, make some pancakes, and at the end of the day I should write some code.</textarea>
+
+                    <label for="image_url">Link to Image</label>
+                    <input type="url" name="image_url" value="https://www.freeiconspng.com/thumbs/tasks-icon/tasks-icon-9.png" maxlength="200" required="" id="id_image_url" />
+
+                    <input type="submit" value="Edit" />
+                </form>
+            </div>
+            <!--end note edit data form-->
+        </div>
+
+        <!--footer-->
+        <footer>
+            <div>Python Web Basics Exam @SoftUni</div>
+        </footer>
+        <!--end footer-->
+    </body>
+</html>
