@@ -4,7 +4,12 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    return render(request, 'common/home-no-profile.html')
+    profile = True
+
+    if profile:
+        return render(request, 'common/home-with-profile.html')  # Dashboard
+    else:
+        return render(request, 'common/home-no-profile.html')
 
 
 # book's views

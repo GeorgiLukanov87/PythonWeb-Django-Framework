@@ -1,29 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/static/images/library.jpg" type="image/x-icon" />
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <title>Online Books Library</title>
-</head>
-
-<body>
-    <div id="container">
-        <header id="site-header">
-
-            <!-- Navigation -->
-            <nav class="navbar">
-                <section class="navbar-dashboard">
-                    <a href="#">Dashboard</a>
-                    <div id="user">
-                        <span>Welcome, Peter</span>
-                        <a class="button" href="#">Add Book</a>
-                        <a class="button" href="#">Profile</a>
-                    </div>
-                </section>
-            </nav>
-        </header>
+{% extends 'base.html' %}
+{% block content %}
 
         <!-- Profile Page -->
         <section id="profile-page" class="details">
@@ -37,10 +13,4 @@
             </div>
         </section>
 
-        <footer id="site-footer">
-            <p>Python Web Basics Retake Exam @SoftUni</p>
-        </footer>
-    </div>
-</body>
-
-</html>
+{% endblock %}
