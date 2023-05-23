@@ -1,31 +1,8 @@
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-        <title>Notes</title>
-    </head>
-
-    <body>
-        <!--navigation bar-->
-        <header>
-            <nav>
-                <ul>
-                    <li class="img"><img src="/static/images/note.png" /></li>
-                    <li><a href="/">Notes</a></li>
-                    <li class="right">
-                        <a href="/add">Add Note</a>
-                        <a href="/profile">Profile</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <!--end navigation bar-->
+{% extends 'base.html' %}
+{% block content %}
 
         <div class="body">
-            <!--headings-->
             <h1>Note Details</h1>
-            <!--headings-->
 
             <!--details note box-->
             <div class="note-details-container">
@@ -45,10 +22,4 @@
             <!--end details note box-->
         </div>
 
-        <!--footer-->
-        <footer>
-            <div>Python Web Basics Exam @SoftUni</div>
-        </footer>
-        <!--end footer-->
-    </body>
-</html>
+{% endblock %}
