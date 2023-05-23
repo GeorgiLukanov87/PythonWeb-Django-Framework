@@ -1,5 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c24c0f06-bd31-41ce-89b9-6ec4dbdd71e1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/online_library_app/my_web/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/add-book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/book-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/delete-profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edit-book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edit-profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home-no-profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home-with-profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online_library_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online_library_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/urls.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QBiN9lw2JddSNzRnIPwzduluqu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="online_library_app" type="Python.DjangoServer" factoryName="Django server">
       <module name="online_library_app" />
@@ -7,6 +68,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="online_library_app.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -24,5 +86,23 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c24c0f06-bd31-41ce-89b9-6ec4dbdd71e1" name="Changes" comment="" />
+      <created>1684833333464</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684833333464</updated>
+      <workItem from="1684833364495" duration="284000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

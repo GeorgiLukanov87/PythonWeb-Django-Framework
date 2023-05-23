@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/library.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Online Books Library</title>
+</head>
+
+<body>
+    <div id="container">
+        <header id="site-header">
+
+            <!-- Navigation -->
+            <nav class="navbar">
+                <section class="navbar-dashboard">
+                    <a href="#">Dashboard</a>
+                    <div id="user">
+                        <span>Welcome, Peter</span>
+                        <a class="button" href="#">Add Book</a>
+                        <a class="button" href="#">Profile</a>
+                    </div>
+                </section>
+            </nav>
+        </header>
+
+        <!-- Dashboard Page-->
+        <section id="dashboard-page" class="dashboard">
+            <h1>Dashboard</h1>
+             <!-- Display paragraph: If the user doesn't have any books  -->
+            <p class="no-books">No books in database!</p>
+            <!-- Display ul: with list-items for every books if any -->
+            <ul class="my-books-list">
+                <li class="myBooks">
+                            <h3>A Court of Thorns...</h3>
+                            <p>Type: Fiction</p>
+                            <p class="img"><img src="https://images-na.ssl-images-amazon.com/images/I/81Z-yHX8OcL.jpg" alt=""></p>
+                            <a class="button" href="#">Details</a>
+                </li>
+
+                <li class="myBooks">
+                    <h3>Outlander</h3>
+                    <p>Type: Other</p>
+                    <p class="img"><img src="https://images-na.ssl-images-amazon.com/images/I/71pjU7wfZFL.jpg" alt=""></p>
+                    <a class="button" href="#">Details</a>
+                </li>
+
+                <li class="myBooks">
+                    <h3>War and Peace</h3>
+                    <p>Type: Philosophy</p>
+                    <p class="img"><img src="https://images-na.ssl-images-amazon.com/images/I/A1aDb5U5myL.jpg" alt=""></p>
+                    <a class="button" href="#">Details</a>
+                </li>
+            </ul>
+        </section>
+
+        <footer id="site-footer">
+            <p>Python Web Basics Retake Exam @SoftUni</p>
+        </footer>
+    </div>
+</body>
+
+</html>
