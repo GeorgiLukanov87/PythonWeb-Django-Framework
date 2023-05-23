@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c24c0f06-bd31-41ce-89b9-6ec4dbdd71e1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online_library_app/my_web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/my_web/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/online_library_app/my_web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_library_app/my_web/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/common/home-no-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home-no-profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/common/home-with-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home-with-profile.html" afterDir="false" />
@@ -98,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684833333464</updated>
-      <workItem from="1684833364495" duration="3424000" />
+      <workItem from="1684833364495" duration="4105000" />
     </task>
     <servers />
   </component>
