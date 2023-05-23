@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/library.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Online Books Library</title>
+</head>
+
+<body>
+    <div id="container">
+        <header id="site-header">
+
+            <!-- Navigation -->
+            <nav class="navbar">
+                <section class="navbar-dashboard">
+                    <a href="#">Dashboard</a>
+                    <div id="user">
+                        <span>Welcome, Peter</span>
+                        <a class="button" href="#">Add Book</a>
+                        <a class="button" href="#">Profile</a>
+                    </div>
+                </section>
+            </nav>
+        </header>
+
+        <!-- Edit Book Page -->
+        <section id="edit-page" class="edit">
+            <form id="edit-form" action="#" method="">
+                <fieldset>
+                    <legend>Edit Book</legend>
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" value="A Court of Thorns and Roses">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description">Feyre's survival rests upon her ability to hunt and kill – the forest where she lives is a cold, bleak place in the long winter months. So when she spots a deer in the forest being pursued by a wolf, she cannot resist fighting it for the flesh. But to do so, she must kill the predator and killing something so precious comes at a price ...</textarea>
+                    <label for="image">Image</label>
+                    <input type="url" name="image" id="image" value="https://images-na.ssl-images-amazon.com/images/I/81Z-yHX8OcL.jpg">
+                    <label for="type">Type</label>
+                    <input type="text" name="type" id="type" value="Fiction">
+                    <input class="button submit" type="submit" value="Edit">
+                </fieldset>
+            </form>
+        </section>
+
+        <footer id="site-footer">
+            <p>Python Web Basics Retake Exam @SoftUni</p>
+        </footer>
+    </div>
+</body>
+
+</html>

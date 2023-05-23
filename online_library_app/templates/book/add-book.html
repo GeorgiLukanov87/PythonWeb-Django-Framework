@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/library.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Online Books Library</title>
+</head>
+
+<body>
+    <div id="container">
+        <header id="site-header">
+
+            <!-- Navigation -->
+            <nav class="navbar">
+                <section class="navbar-dashboard">
+                    <a href="#">Dashboard</a>
+                    <div id="user">
+                        <span>Welcome, Peter</span>
+                        <a class="button" href="#">Add Book</a>
+                        <a class="button" href="#">Profile</a>
+                    </div>
+                </section>
+            </nav>
+        </header>
+
+        <!-- Add Book Page -->
+        <section id="create-page" class="create">
+            <form id="create-form" action="" method="POST">
+                <fieldset>
+                    <legend>Add New Book</legend>
+                    <label for="title">Title</label>
+                    <input type="text" name="title" maxlength="30" required="" id="title" placeholder="Title">
+                    <label for="description">Description</label>
+                    <textarea name="description" cols="40" rows="100" required="" id="description" placeholder="Description"></textarea>
+                    <label for="image">Image</label>
+                    <input type="url" name="image-url" maxlength="200" required="" id="image" placeholder="Image">
+                    <label for="type">Type</label>
+                    <input type="text" name="type" maxlength="30" required="" id="type" placeholder="Fiction, Novel, Crime..">
+                    <input class="button submit" type="submit" value="Add Book">
+                </fieldset>
+            </form>
+        </section>
+
+        <footer id="site-footer">
+            <p>Python Web Basics Retake Exam @SoftUni</p>
+        </footer>
+    </div>
+</body>
+
+</html>
