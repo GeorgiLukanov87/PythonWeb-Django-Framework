@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from notes_app.my_web.forms import NoteEditForm, NoteCreateForm
+from notes_app.my_web.forms import NoteEditForm, NoteCreateForm, ProfileCreateForm
 from notes_app.my_web.models import Profile, Note
 
 
@@ -21,7 +21,22 @@ def index(request):
         )
 
     else:
-        return render(request, 'common/home-no-profile.html')
+        if request.method == 'GET':
+            form = ProfileCreateForm()
+        else:
+            form = ProfileCreateForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('index')
+
+        context = {
+            'form': form,
+        }
+        return render(
+            request,
+            'common/home-no-profile.html',
+            context,
+        )
 
 
 def profile_details(request):
@@ -38,6 +53,14 @@ def profile_details(request):
         'common/profile.html',
         context,
     )
+
+
+def profile_delete(request):
+    profile = Profile.objects.first()
+    notes = Note.objects.all()
+    notes.delete()
+    profile.delete()
+    return redirect('index')
 
 
 def add_note(request):

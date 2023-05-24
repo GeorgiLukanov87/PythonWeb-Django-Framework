@@ -1,6 +1,7 @@
 from django.urls import path, include
 
-from notes_app.my_web.views import index, add_note, edit_note, delete_note, details_note, profile_details
+from notes_app.my_web.views import index, add_note, edit_note, delete_note, details_note, profile_details, \
+    profile_delete
 
 # http://localhost:8000/ - home page
 # http://localhost:8000/add - add note page
@@ -20,5 +21,6 @@ urlpatterns = [
     ])),
 
     path('profile/', profile_details, name='profile-details'),
+    path('profile/delete/', profile_delete, name='profile-delete'),
 
 ]

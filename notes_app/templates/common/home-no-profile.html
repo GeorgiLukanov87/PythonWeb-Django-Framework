@@ -1,29 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        <div class="body">
-            <h1>Enter Your Data</h1>
-            {# NO PROFILE ! #}
-            <!--profile data form-->
-            <div class="form">
-                <form method="POST">
-                    <input type="hidden" name="csrfmiddlewaretoken" value="97MmAxmrs7yPXUamEdIgRY80OHEP383f6VukAC6agPNIW60LqTcnIQlM6YCYPjc0" />
-                    <label for="firstName">First Name</label>
-                    <input type="text" name="first_name" maxlength="15" required="" id="id_first_name" />
+    <div class="body">
+        <h1>Enter Your Data</h1>
+        <div class="form">
+            <form method="POST">
 
-                    <label for="lastName">Last Name</label>
-                    <input type="text" name="last_name" maxlength="15" required="" id="id_last_name" />
+                {{ form }}
+                {% csrf_token %}
 
-                    <label for="age">Age</label>
-                    <input type="number" name="age" required="" id="id_age" />
-
-                    <label for="profilePhoto">Link to Profile Image</label>
-                    <input type="url" name="profile_image" required="" id="id_image" />
-
-                    <input type="submit" value="SUBMIT" />
-                </form>
-            </div>
-            <!--end profile data form-->
+                <input type="submit" value="SUBMIT"/>
+            </form>
         </div>
+    </div>
 
 {% endblock %}
