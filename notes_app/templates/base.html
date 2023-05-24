@@ -14,10 +14,12 @@
         <ul>
             <li class="img"><img src="{% static 'images/note.png' %}"/></li>
             <li><a href="{% url 'index' %}">Notes</a></li>
+            {% if profile %}
             <li class="right">
                 <a href="{% url 'add-note' %}">Add Note</a>
                 <a href="{% url 'profile-details' %}">Profile</a>
             </li>
+            {% endif %}
         </ul>
     </nav>
 </header>

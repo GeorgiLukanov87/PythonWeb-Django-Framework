@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from notes_app.my_web.forms import NoteEditForm, NoteCreateForm, ProfileCreateForm
+from notes_app.my_web.forms import NoteEditForm, NoteCreateForm, ProfileCreateForm, NoteDeleteForm
 from notes_app.my_web.models import Profile, Note
 
 
@@ -108,7 +108,25 @@ def edit_note(request, pk):
 
 
 def delete_note(request, pk):
-    return render(request, 'note/note-delete.html')
+    note = Note.objects.get(pk=pk)
+    if request.method == 'GET':
+        form = NoteDeleteForm(instance=note)
+    else:
+        form = NoteDeleteForm(request.POST, instance=note)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
+    context = {
+        'form': form,
+        'note': note,
+    }
+
+    return render(
+        request,
+        'note/note-delete.html',
+        context,
+    )
 
 
 def details_note(request, pk):
