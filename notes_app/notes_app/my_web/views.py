@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+from notes_app.my_web.forms import NoteEditForm
 from notes_app.my_web.models import Profile, Note
 
 
@@ -32,7 +33,27 @@ def add_note(request):
 
 
 def edit_note(request, pk):
-    return render(request, 'note/note-edit.html')
+    note = Note.objects.get(pk=pk)
+
+    if request.method == 'GET':
+        form = NoteEditForm(instance=note)
+    else:
+        form = NoteEditForm(request.POST, instance=note)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
+    context = {
+        'form': form,
+        'note': note,
+    }
+
+    return render(
+        request,
+        'note/note-edit.html',
+        context,
+
+    )
 
 
 def delete_note(request, pk):
