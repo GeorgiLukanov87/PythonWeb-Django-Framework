@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="form">
+        <h1 class="note-container">Are you sure you want to DELETE ?</h1>
+        <form method="post">
+            {{ form }}
+            {% csrf_token %}
+            <div class="note-container" style="display: flex;gap:25%">
+                <h2>
+                    <input style="text-decoration: none" type="submit" value="YES"/>
+
+                </h2>
+                <h2>
+                    <a style="padding: 12px;background-color: black;border-radius: 16px; ;border:1px solid black;font-size: 36px;color: red;position: relative;top:15px" href="{% url 'index' %}">No!</a>
+                </h2>
+            </div>
+        </form>
+    </div>
+{% endblock %}

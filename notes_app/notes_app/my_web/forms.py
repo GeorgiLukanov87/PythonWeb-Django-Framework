@@ -45,3 +45,24 @@ class ProfileBaseForm(forms.ModelForm):
 
 class ProfileCreateForm(ProfileBaseForm):
     pass
+
+
+class ProfileDeleteForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('first_name', 'last_name')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__disable_fields()
+
+    def save(self, commit=True):
+        if commit:
+            Note.objects.all().delete()
+            self.instance.delete()
+
+        return self.instance
+
+    def __disable_fields(self):
+        for _, field in self.fields.items():
+            field.widget.attrs['readonly'] = 'readonly'
