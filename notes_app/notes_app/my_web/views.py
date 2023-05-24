@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 def index(request):
-    profile = None
+    profile = True
     if profile:
         return render(request, 'common/home-with-profile.html')
     else:
