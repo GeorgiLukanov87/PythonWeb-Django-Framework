@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
 body {
     background: #f7f7f7;
     font-family: 'Lato', sans-serif;
@@ -15,7 +16,11 @@ a {
 nav {
     background: #474c55;
     height: 60px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid red;
+    box-shadow: #00ffe7 4px 11px 15px 5px;
 }
+
 /* navigation bar how items display */
 nav ul {
     display: flex;
@@ -28,10 +33,10 @@ nav ul li a {
     text-decoration: none;
     list-style: none;
     font-size: 30px;
-/* Padding is used to create space around an element's content,
-inside of any defined borders. */
+    /* Padding is used to create space around an element's content,
+    inside of any defined borders. */
     padding: 6px;
-/* Create space from the top to the element. */
+    /* Create space from the top to the element. */
     margin-top: 6px;
 }
 
@@ -40,6 +45,7 @@ nav ul li.right {
     position: absolute;
     right: 30px;
 }
+
 /*navigation bar right items */
 nav ul li.right a {
     font-size: 20px;
@@ -47,8 +53,9 @@ nav ul li.right a {
 }
 
 /*navigation bar img area */
+
 nav ul li.img {
-    margin-top: 6px;
+    margin-top: 16px;
 }
 
 /*heading 1 and 2 */
@@ -88,7 +95,7 @@ input[type=submit],
 .button {
     background-color: #91cccc;
     text-decoration: underline;
-    color: 	black;
+    color: black;
     padding: 15px 20px;
     border: none;
     cursor: pointer;
@@ -105,7 +112,7 @@ input[type=submit],
 input[type=submit]:hover,
 .button:hover {
     background-color: #5996bc;
-    text-decoration: underline;
+
 }
 
 /* style of edit button */
@@ -138,9 +145,9 @@ input[type=delete]:hover,
 input[type=edit]:hover,
 .button.details:hover,
 .button.delete:hover,
-.button.edit:hover{
+.button.edit:hover {
     background-color: #ffcb63;
-    text-decoration: underline;
+
 
 }
 
@@ -170,9 +177,9 @@ input[type=edit]:hover,
 
 
 /* image in the box - i want it on the top right in one line with the heading*/
-.note-container img{
-    width: 100px;
-    max-height: 100px;
+.note-container img {
+    width: 200px;
+    max-height: 200px;
     float: right;
 }
 
@@ -184,7 +191,7 @@ I want to be in the center bottom of the box */
 }
 
 /* "age" in profile */
-.note-container p{
+.note-container p {
     font-size: 20px;
 
 }
@@ -192,10 +199,10 @@ I want to be in the center bottom of the box */
 /*       NEW!!!!!
 
 box for note details layout */
-.note-details-container{
+.note-details-container {
     display: block;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 2% auto 10% auto;
     background: #ffe8ba;
 }
@@ -228,7 +235,7 @@ box for note details layout */
 
 
 /* image in the box details*/
-.note-details-container img{
+.note-details-container img {
     height: 200px;
     display: block;
     margin-left: auto;
@@ -236,11 +243,12 @@ box for note details layout */
     width: auto;
 }
 
-.note-details-container div p{
+.note-details-container div p {
     font-size: 25px;
     font-style: italic;
 }
-.note-details-container p{
+
+.note-details-container p {
     font-size: 18px;
     font-style: normal;
 }
@@ -264,4 +272,52 @@ footer {
 footer div {
     text-align: center;
     color: ghostwhite;
+}
+
+.button {
+    color: red;
+    text-decoration: none;
+    font-size: 26px;
+    border: 2px solid #065e03;
+    border-radius: 16px;
+    padding: 16px 1px;
+    padding-bottom: 20px;
+    background-color: black;
+}
+
+
+body {
+    background-color: #5996bc;
+}
+
+.right {
+    padding-bottom: 20px;
+
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    padding-bottom: 16px;
+}
+
+a:hover {
+    color: blue;
+    scale: 1.15;
+    border-radius: 16px;
+    transition: 200ms;
+
+}
+
+nav ul {
+    align-items: center;
+}
+
+img:hover {
+    scale: 1.15;
+    border-radius: 16px;
+    transition: 200ms;
+    border: 1.5px solid red;
 }

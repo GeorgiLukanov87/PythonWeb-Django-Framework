@@ -1,23 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1>My Notes</h1>
-    <h2>There are no notes.</h2>
-    <!--notes container-->
+    <h1 style="color: #b73030;font-size: 38px">My Notes</h1>
 
-    {% if notes %}
-        <div class="note-container" style="border: 2px solid #541818">
-    {% endif %}
+
 {% for note in notes %}
-
+    {% if notes %}
+        <div class="note-container" style="border: 2px solid #541818;border-radius: 16px">
+    {% else %}
+        <h2>There are no notes.</h2>
+    {% endif %}
     <h2>{{ note.title }}<img src="{{ note.image_url }}"/></h2>
+    <h3 style="color: #5996bc">
+        <span style="color: darkgreen">Content</span>:
+        <br>
+        <br>
+        {{ note.content }}
+    </h3>
     <div class="right">
         <a class="button details" href="{% url 'details-note' pk=note.pk %}">Details</a>
         <a class="button edit" href="{% url 'edit-note' pk=note.pk %}">Edit</a>
         <a class="button delete" href="{% url 'delete-note' pk=note.pk %}">Delete</a>
     </div>
-
-{% endfor %}
 </div>
+{% endfor %}
+
 
 {% endblock %}
+
