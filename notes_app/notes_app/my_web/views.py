@@ -1,8 +1,10 @@
 from django.shortcuts import render
 
+from notes_app.my_web.models import Profile
+
 
 def index(request):
-    profile = True
+    profile = Profile.objects.first()
     if profile:
         return render(request, 'common/home-with-profile.html')
     else:
