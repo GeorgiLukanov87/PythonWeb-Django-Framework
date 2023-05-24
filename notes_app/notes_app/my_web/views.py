@@ -40,4 +40,15 @@ def delete_note(request, pk):
 
 
 def details_note(request, pk):
-    return render(request, 'note/note-details.html')
+    note = Note.objects.get(pk=pk)
+
+    context = {
+        'note': note,
+    }
+
+    return render(
+        request,
+        'note/note-details.html',
+        context,
+
+    )
