@@ -11,3 +11,9 @@ class NoteBaseForm(forms.ModelForm):
 
 class NoteEditForm(NoteBaseForm):
     pass
+
+
+class NoteCreateForm(forms.ModelForm):
+    class Meta:
+        model = Note
+        fields = '__all__'

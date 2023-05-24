@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
+        {% if profile %}
         <div class="body">
             <h1>Your Profile</h1>
-            <!--profile details container TODO-->
             <div class="note-container">
                 <h2>
-                    Mariya Ivanova
-                    <img src="https://www.nicepng.com/png/detail/249-2492113_work-profile-user-default-female-suit-comments-default.png" />
+                    {{ profile.first_name}} {{ profile.last_name }}
+                    <img src="{{ profile.image_url }}" />
                 </h2>
                 <p>Age: 28</p>
                 <div>
-                    <p>All notes: 2</p>
+                    <p>All notes: {{ notes.count }}</p>
                 </div>
                 <div class="right">
                     <a class="button delete" href="/delete/4">Delete</a>
@@ -19,5 +19,6 @@
             </div>
             <!--end profile details container-->
         </div>
+    {% endif %}
 
 {% endblock %}
