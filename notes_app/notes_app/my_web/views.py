@@ -1,12 +1,24 @@
 from django.shortcuts import render
 
-from notes_app.my_web.models import Profile
+from notes_app.my_web.models import Profile, Note
 
 
 def index(request):
     profile = Profile.objects.first()
+    notes = Note.objects.all()
     if profile:
-        return render(request, 'common/home-with-profile.html')
+
+        context = {
+            'profile': profile,
+            'notes': notes,
+        }
+
+        return render(
+            request,
+            'common/home-with-profile.html',
+            context,
+        )
+
     else:
         return render(request, 'common/home-no-profile.html')
 

@@ -1,17 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        <h1>My Notes</h1>
-        <h2>There are no notes.</h2>
-        <!--notes container-->
-        <div class="note-container">
-            <h2>Today's Tasks <img src="https://www.freeiconspng.com/thumbs/tasks-icon/tasks-icon-9.png" /></h2>
+    <h1>My Notes</h1>
+    <h2>There are no notes.</h2>
+    <!--notes container-->
 
-            <div class="right">
-                <a class="button details" href="/details/3">Details</a>
-                <a class="button edit" href="/edit/3">Edit</a>
-                <a class="button delete" href="/delete/3">Delete</a>
-            </div>
-        </div>
-    
+    {% if notes %}
+        <div class="note-container" style="border: 2px solid #541818">
+    {% endif %}
+{% for note in notes %}
+
+    <h2>{{ note.title }}<img src="{{ note.image_url }}"/></h2>
+    <div class="right">
+        <a class="button details" href="{% url 'details-note' pk=note.pk %}">Details</a>
+        <a class="button edit" href="{% url 'edit-note' pk=note.pk %}">Edit</a>
+        <a class="button delete" href="{% url 'delete-note' pk=note.pk %}">Delete</a>
+    </div>
+
+{% endfor %}
+</div>
+
 {% endblock %}
