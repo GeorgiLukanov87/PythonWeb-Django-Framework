@@ -101,3 +101,9 @@
 .edit-delete button:hover {
     box-shadow: none;
 }
+
+.add-photo-form, .add-pet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}

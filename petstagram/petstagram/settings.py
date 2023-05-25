@@ -66,7 +66,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "petstagram_workshop_db",
         "USER": "postgres",
-        "PASSWORD": "******",
+        "PASSWORD": "doggystyle12345",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
