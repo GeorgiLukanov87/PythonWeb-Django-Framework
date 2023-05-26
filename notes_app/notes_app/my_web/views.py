@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy, reverse
+from django.views import generic as view
 
 from notes_app.my_web.forms import NoteEditForm, NoteCreateForm, ProfileCreateForm, NoteDeleteForm, ProfileDeleteForm
 from notes_app.my_web.models import Profile, Note
@@ -78,82 +80,41 @@ def profile_delete(request):
     )
 
 
-def add_note(request):
-    if request.method == 'GET':
-        form = NoteCreateForm()
-    else:
-        form = NoteCreateForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
+class DeleteNoteCBV(view.DeleteView):
+    template_name = 'note/note-delete.html'
+    model = Note
+    fields = '__all__'
 
-    context = {
-        'form': form,
-    }
-
-    return render(
-        request,
-        'note/note-create.html',
-        context,
-    )
+    success_url = '/'
 
 
-def edit_note(request, pk):
-    note = Note.objects.get(pk=pk)
+class AddNoteCBV(view.CreateView):
+    template_name = 'note/note-create.html'
+    model = Note
+    fields = '__all__'
 
-    if request.method == 'GET':
-        form = NoteEditForm(instance=note)
-    else:
-        form = NoteEditForm(request.POST, instance=note)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
+    # static redirect
+    # success_url = '/'
 
-    context = {
-        'form': form,
-        'note': note,
-    }
-
-    return render(
-        request,
-        'note/note-edit.html',
-        context,
-
-    )
+    # dynamic redirect
+    def get_success_url(self):
+        return reverse('details-note', kwargs={
+            'pk': self.object.pk,
+        })
 
 
-def delete_note(request, pk):
-    note = Note.objects.get(pk=pk)
-    if request.method == 'GET':
-        form = NoteDeleteForm(instance=note)
-    else:
-        form = NoteDeleteForm(request.POST, instance=note)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
+class EditNoteCBV(view.UpdateView):
+    model = Note
+    fields = '__all__'
+    template_name = 'note/note-edit.html'
 
-    context = {
-        'form': form,
-        'note': note,
-    }
-
-    return render(
-        request,
-        'note/note-delete.html',
-        context,
-    )
+    def get_success_url(self):
+        return reverse('details-note', kwargs={
+            'pk': self.object.pk,
+        })
 
 
-def details_note(request, pk):
-    note = Note.objects.get(pk=pk)
-
-    context = {
-        'note': note,
-    }
-
-    return render(
-        request,
-        'note/note-details.html',
-        context,
-
-    )
+class DetailsNoteCBV(view.DeleteView):
+    model = Note
+    fields = '__all__'
+    template_name = 'note/note-details.html'

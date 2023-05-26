@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        <div class="body">
-            <h1>Delete Note</h1>
+    <div class="body">
+        <h1>Delete Note</h1>
 
-            <div class="form">
-                <form method="POST" action="{% url 'delete-note' pk=note.pk %}">
-                    {{ form }}
-                    {% csrf_token %}
-                    <input type="submit" value="Delete" />
-                </form>
-            </div>
-
+        <div class="form">
+            <form method="post">
+                {{ form }}
+                {% csrf_token %}
+                <input type="submit" value="Delete"/>
+            </form>
         </div>
+
+    </div>
 
 {% endblock %}

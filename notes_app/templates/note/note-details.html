@@ -15,8 +15,8 @@
                 {{ note.content }}
             </p>
             <div class="right">
-                <a class="button edit" href="{% url 'edit-note' pk=note.pk %}">Edit</a>
-                <a class="button delete" href="{% url 'delete-note' pk=note.pk %}">Delete</a>
+                <a class="button edit" href="{% url 'edit-note' pk=object.pk %}">Edit</a>
+                <a class="button delete" href="{% url 'delete-note' pk=object.pk %}">Delete</a>
             </div>
         </div>
 

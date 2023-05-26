@@ -1,7 +1,7 @@
 from django.urls import path, include
 
-from notes_app.my_web.views import index, add_note, edit_note, delete_note, details_note, profile_details, \
-    profile_delete
+from notes_app.my_web.views import index, profile_details, \
+    profile_delete, AddNoteCBV, DeleteNoteCBV, EditNoteCBV, DetailsNoteCBV
 
 # http://localhost:8000/ - home page
 # http://localhost:8000/add - add note page
@@ -14,10 +14,12 @@ from notes_app.my_web.views import index, add_note, edit_note, delete_note, deta
 urlpatterns = [
     path('', include([
         path('', index, name='index'),
-        path('add/', add_note, name='add-note'),
-        path('edit/<int:pk>/', edit_note, name='edit-note'),
-        path('delete/<int:pk>/', delete_note, name='delete-note'),
-        path('details/<int:pk>/', details_note, name='details-note'),
+        path('edit/<int:pk>/', EditNoteCBV.as_view(), name='edit-note'),
+        path('delete/<int:pk>/', DeleteNoteCBV.as_view(), name='delete-note'),
+        path('details/<int:pk>/', DetailsNoteCBV.as_view(), name='details-note'),
+
+        path('add_note/', AddNoteCBV.as_view(), name='add-note'),
+
     ])),
 
     path('profile/', profile_details, name='profile-details'),
