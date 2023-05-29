@@ -6,7 +6,7 @@
 
             <!-- Start Add Pet Form -->
             <form class="add-pet-form" method="post" action="{% url 'add pet' %}">
-                {{ form }}
+                {{ form.as_p }}
                 {% csrf_token %}
                 <!-- Add Pet Button -->
                 <button class="add-btn" type="submit">Add Pet</button>

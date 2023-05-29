@@ -8,7 +8,7 @@
             <!-- Start Add Photo Form -->
             <form class="add-photo-form" method="post" enctype="multipart/form-data">
 
-                {{ form }}
+                {{ form.as_p }}
                 {% csrf_token %}
 
                 <!-- Add Photo Button -->
