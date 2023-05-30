@@ -23,17 +23,33 @@ class SignOutView(auth_views.LogoutView):
     next_page = reverse_lazy('show index')
 
 
-# ----------------------------------------------
-def show_profile_details(request, pk):
-    return render(request, 'accounts/profile-details-page.html')
+class UserDetailsView(generic.DetailView):
+    model = UserModel
+    template_name = 'accounts/profile-details-page.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['is_owner'] = self.request.user == self.object
+
+        return context
 
 
-def edit_profile(request, pk):
-    return render(request, 'accounts/profile-edit-page.html')
+class UserEditView(generic.UpdateView):
+    template_name = 'accounts/profile-edit-page.html'
+    model = UserModel
+    fields = ('first_name', 'last_name', 'email', 'gender',)
+
+    def get_success_url(self):
+        return reverse_lazy('profile details', kwargs={
+            'pk': self.request.user.pk,
+        })
 
 
-def delete_profile(request, pk):
-    return render(request, 'accounts/profile-delete-page.html')
+class UserDeleteView(generic.DeleteView):
+    template_name = 'accounts/profile-delete-page.html'
+    model = UserModel
+    success_url = reverse_lazy('show index')
 
 
 def to_github(request):
