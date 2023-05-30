@@ -3,7 +3,6 @@
 {% block content %}
 
     <main>
-        <!-- Start Delete Profile Section -->
         <div class="delete-profile">
             <h1>
                 Are you sure you want to delete your profile?
@@ -16,9 +15,11 @@
                     <a class="edit-btn" href="javascript:history.back()">Go Back</a>
                 </form>
             </div>
-            <img src="{% static 'images/are_you_sure_cat.gif' %}" alt="are you sure cat git">
+            <div class="cat-wrapper">
+                <img src="{% static 'images/are_you_sure_cat.gif' %}" alt="are you sure cat git">
+            </div>
+
         </div>
-        <!-- End Delete Profile Section -->
     </main>
 
 {% endblock %}
