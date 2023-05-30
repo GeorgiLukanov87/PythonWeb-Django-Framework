@@ -4,7 +4,8 @@
         <div class="container">
             <div class="logo">
                 <a href="{% url 'show index' %}">
-                    <img width="50px" src="{% static 'images/dogo-argentino-dog-head-logo-icon-illustration-design-vector.jpg' %}"
+                    <img width="50px"
+                         src="{% static 'images/dogo-argentino-dog-head-logo-icon-illustration-design-vector.jpg' %}"
                          alt="img1">
                 </a>
 
@@ -15,37 +16,46 @@
 
             <div class="nav-links">
                 <ul class="nav-group">
-
                     <li class="nav-item">
-
                         <a href="{% url 'add pet' %}">
                             <i>Add Pet</i>
                         </a>
                     </li>
                     <li class="nav-item">
-
                         <a href="{% url 'add photo' %}">
                             <i>Add Photo</i>
                         </a>
                     </li>
-                    <li class="nav-item">
 
-                        <a href="{% url 'login' %}">
-                            <i>Login</i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
 
-                        <a href="{% url 'register' %}">
-                            <i>Register</i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
+                    {% if request.user.is_authenticated %}
 
-                        <a href="{% url 'profile details' pk=1 %}">
-                            <i>Profile</i>
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a href="{% url 'profile details' pk=request.user.pk %}">
+                                <i>Profile={{ request.user }}</i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'logout' %}">
+                                <i>Log out</i>
+                            </a>
+                        </li>
+
+                    {% else %}
+                        <li class="nav-item">
+                            <a href="{% url 'login' %}">
+                                <i>Log in</i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'register' %}">
+                                <i>Register</i>
+                            </a>
+                        </li>
+                    {% endif %}
+
 
                 </ul>
             </div>

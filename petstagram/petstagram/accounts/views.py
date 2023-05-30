@@ -19,6 +19,10 @@ class SingInView(generic.CreateView):
     success_url = reverse_lazy('show index')
 
 
+class SignOutView(auth_views.LogoutView):
+    next_page = reverse_lazy('show index')
+
+
 # ----------------------------------------------
 def show_profile_details(request, pk):
     return render(request, 'accounts/profile-details-page.html')

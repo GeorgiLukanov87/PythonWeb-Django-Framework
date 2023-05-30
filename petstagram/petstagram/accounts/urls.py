@@ -1,14 +1,14 @@
 from django.urls import path, include
 
 from petstagram.accounts.views import show_profile_details, edit_profile, delete_profile, to_github, SignInView, \
-    SingInView
+    SingInView, SignOutView
 
 # accounts/urls.py
 
 urlpatterns = (
     path('register/', SingInView.as_view(), name='register'),
     path('login/', SignInView.as_view(), name='login'),
-    path('to_github/', to_github, name='out'),
+    path('logout/', SignOutView.as_view(), name='logout'),
 
     path('profile/<int:pk>/', include(
         [
@@ -18,4 +18,5 @@ urlpatterns = (
         ]
     )),
 
+    path('to_github/', to_github, name='go to github'),
 )
