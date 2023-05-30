@@ -27,10 +27,11 @@
 
                                 <!-- Link to User Profile Details Page -->
                                 <a href="#">
-                                    <!-- IF user has first name and last name -->
-                                    Diyan Kalaydzhiev
-                                    <!-- else -->
-                                    <!-- show user username -->
+                                    {% if photo.user.get_full_name %}
+                                        {{ photo.user.get_full_name }}
+                                    {% else %}
+                                        {{ photo.user.username }}
+                                    {% endif %}
                                 </a>
                                 <br>
 
@@ -39,22 +40,23 @@
                                     <span>{{ photo.location }}</span>
                                 {% endif %}
                                 <!-- IF the viewer is the creator of the photo -->
-                                <div class="edit-delete-btns">
+                                {% if is_owner %}
+                                    <div class="edit-delete-btns">
 
-                                    <!-- Link to Edit Pet Photo Page -->
-                                    <a href="{% url 'edit photo' photo.pk %}">
-                                        <img class="edit-img" src="{% static '/images/edit-pen-icon-6.jpg' %}"
-                                             alt="edit button">
-                                    </a>
+                                        <!-- Link to Edit Pet Photo Page -->
+                                        <a href="{% url 'edit photo' photo.pk %}">
+                                            <img class="edit-img" src="{% static '/images/edit-pen-icon-6.jpg' %}"
+                                                 alt="edit button">
+                                        </a>
 
-                                    <!-- Link to Delete Pet Photo Page -->
-                                    <a href="{% url 'delete photo' photo.pk %}">
-                                        <img class="bin-img" src="{% static '/images/icon-remove-22.jpg' %}"
-                                             alt="bin button">
-                                    </a>
-                                </div>
-                                <!-- End IF the viewer is the creator of the photo -->
-
+                                        <!-- Link to Delete Pet Photo Page -->
+                                        <a href="{% url 'delete photo' photo.pk %}">
+                                            <img class="bin-img" src="{% static '/images/icon-remove-22.jpg' %}"
+                                                 alt="bin button">
+                                        </a>
+                                    </div>
+                                    <!-- End IF the viewer is the creator of the photo -->
+                                {% endif %}
                             </h3>
                         </div>
                         <!-- End User Details and Image Location Section -->
@@ -62,11 +64,11 @@
                     </div>
 
                     <!-- Start Pet Photo -->
-                    <div class="imgBx" id="place the id of the photo here">
+                    <div class="imgBx" id="{{ photo.pk }}">
                         <!-- Pet Photo -->
 
                         <!-- TODO! not sure if is right!? -->
-                        <img src="{{ photo.photo.url }}" alt="post" class="cover">
+                        <img src="/media/{{ photo.photo }}" alt="post" class="cover">
                     </div>
                     <!-- End Pet Photo -->
 
@@ -159,7 +161,7 @@
                                 </p>
                             </a>
                             <!-- Link to Second Tagged Pet Details Page -->
-                            <a href="{% url 'show pet details' "username" pet.slug %}">
+                            <a href="{% url 'show pet details' username=pet.user.username pet_slug=pet.slug %}">
                                 <p class="message">
                                     <b>{{ pet.name }}</b>
                                 </p>

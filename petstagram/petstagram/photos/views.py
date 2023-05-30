@@ -37,6 +37,7 @@ def show_photo_details(request, pk):
         'likes': likes,
         'comments': comments,
         'comment_form': comment_form,
+        'is_owner': request.user == photo.user,
     }
 
     return render(

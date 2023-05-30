@@ -9,7 +9,7 @@
 
             <!-- Starts Edit Photo Form -->
             <form method="post">
-                {{ form }}
+                {{ form.as_p}}
                 {% csrf_token %}
 
                 <!-- Edit Photo Button -->

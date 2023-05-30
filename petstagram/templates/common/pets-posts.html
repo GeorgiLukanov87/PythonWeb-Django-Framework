@@ -2,7 +2,7 @@
 {% for photo in all_photos %}
     <!-- Start Pet Photos Post Section -->
     <!-- Start First Pet Photo Post -->
-    <div class="card" style="background-color: #f1f6e7;border-radius: 12px;border:2px solid #625b5b;font-size: 46px">
+    <div class="card" style="background-color: #e5efd4;border-radius: 12px;border:2px solid black;font-size: 46px">
 
         <!-- Start User Details and Image Location -->
         <div class="top">
@@ -26,6 +26,7 @@
                         <!-- show user username -->
                     </a>
                     <br>
+                    <!-- if the photo has location -->
                     {% if photo.location %}
                         <span>{{ photo.location }}</span>
                     {% endif %}
