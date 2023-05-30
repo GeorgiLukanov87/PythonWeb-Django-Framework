@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 
@@ -19,3 +20,7 @@ def edit_profile(request, pk):
 
 def delete_profile(request, pk):
     return render(request, 'accounts/profile-delete-page.html')
+
+
+def out(request):
+    return HttpResponseRedirect("https://github.com/GeorgiLukanov87/PythonWeb-Django-Framework/tree/main/petstagram")

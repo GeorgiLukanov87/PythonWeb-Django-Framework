@@ -9,13 +9,20 @@
 
 body {
     font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
-        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     background: #fafafa;
     min-height: 100vh;
+
 }
 
 .error {
     color: red;
+}
+
+.nav-item:hover {
+    background-color: #04bb2f;
+    border-radius: 6px;
+    transition: 200ms linear;
 }
 
 .navbar {
@@ -27,6 +34,8 @@ body {
     background: rgb(255, 255, 255);
     width: 100%;
     border: 1px solid rgb(218, 217, 217);
+    box-shadow: 4px 4px 20px 1px #cff3cf;
+
 }
 
 .container {
@@ -35,6 +44,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 
 .container a {
@@ -88,13 +98,14 @@ body {
     margin-top: -0.8rem;
 }
 
+
 .searchbar input::placeholder {
     font-weight: lighter;
     color: rgb(172, 172, 172);
 }
 
 .home {
-    font-size: 25px;
+    font-size: 26px;
     margin: 10px 0 0 3px;
     color: black;
     font-family: 'Indie Flower', cursive;
@@ -108,7 +119,9 @@ body {
 
 .nav-group .nav-item {
     list-style-type: none;
-    margin: 0 8px;
+    margin: 0 10px;
+    padding: 8px;
+
 }
 
 .nav-group .nav-item a {
@@ -239,7 +252,7 @@ main .container {
     color: #4d4d4f;
     font-weight: 500;
     line-height: 1em;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .col-9 .card .top .userDetails h3 span {
@@ -424,7 +437,7 @@ a {
 
 .footer {
     text-align: center;
-    margin-bottom: 20px;
+
 }
 
 .footer .footer-section {
@@ -433,8 +446,10 @@ a {
     font-size: 12px;
     font-family: sans-serif;
     z-index: -2;
+
 }
 
-.footer a:hover {
-    color: #ff0000;
+.footer:hover{
+    padding-bottom: 20px;
 }
+
