@@ -52,29 +52,47 @@
 
                 <p class="email">{{ object.email }}</p>
 
-            {% if object.gender %}
-                {{ object.gender }}
-            {% endif %}
+                {% if object.gender %}
+                    {{ object.gender }}
+                {% endif %}
 
             </div>
         </div>
     </div>
-    <!-- End Pet Personal Data Section -->
 
-    <div class="pet-posts">
+    <div class="pets">
+        <div class="statuses">
 
-        <!-- IF Photos Start Pet Photos Post Section -->
+            {% for pet in object.pet_set.all %}
 
-        <!-- Start First Pet Photo Post -->
-        {% include 'common/pets-posts.html' %}
+                <a href="{% url 'show pet details' username=object.username pet_slug=pet.slug %}">
+                    <div class="head-pet">
+                        <div class="status">
+                            <div class="image">
+                                <img src="{{ pet.personal_photo }}"
+                                     alt="pet img">
+                            </div>
+                        </div>
+                        <p>{{ pet.name }}</p>
+                    </div>
+                </a>
 
-
-        <!-- IF Photos End Pet Photos Post Section -->
-
-        <!-- IF NOT Photos Show No Post Image -->
-        <img class="no-posts" src="{% static 'images/no_posts.png' %}" alt="no posts image">
-
+            {% endfor %}
+        </div>
     </div>
+    <!-- End Pets Data Section -->
+
+    {#    <div class="pet-posts">#}
+    {##}
+    {#        <!-- IF Photos Start Pet Photos Post Section -->#}
+    {#        <!-- Start First Pet Photo Post -->#}
+    {#        {% include 'common/pets-posts.html' %}#}
+    {##}
+    {##}
+    {#        <!-- IF Photos End Pet Photos Post Section -->#}
+    {#        <!-- IF NOT Photos Show No Post Image -->#}
+    {##}
+    {#    </div>#}
 
 
 

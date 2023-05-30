@@ -161,6 +161,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 main .container {
@@ -170,6 +171,7 @@ main .container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .col-9 {
