@@ -1,8 +1,11 @@
+from django.contrib.auth import get_user_model
 from django.core.validators import MinLengthValidator
 from django.db import models
 
 from petstagram.pets.models import Pet
 from petstagram.photos.validators import validate_file_size_5mb
+
+UserModel = get_user_model()
 
 
 class Photo(models.Model):
@@ -39,4 +42,9 @@ class Photo(models.Model):
 
     date_of_publication = models.DateField(
         auto_now=True,
+    )
+
+    user = models.ForeignKey(
+        UserModel,
+        on_delete=models.RESTRICT,
     )

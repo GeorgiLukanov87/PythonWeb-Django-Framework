@@ -17,7 +17,19 @@
                         </div>
                     </div>
                 </a>
-
+                <h3>
+                    <!-- Link to User Profile Page -->
+                    <a href="#">
+                        <!-- if user has first name and last name -->
+                        Diyan Kalaydzhiev
+                        <!-- else -->
+                        <!-- show user username -->
+                    </a>
+                    <br>
+                    {% if photo.location %}
+                        <span>{{ photo.location }}</span>
+                    {% endif %}
+                </h3>
             </div>
         </div>
         <!-- End User Details and Image Location -->
