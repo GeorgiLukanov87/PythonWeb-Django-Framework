@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from petstagram.common.forms import CommentForm
@@ -5,6 +6,7 @@ from petstagram.pets.forms import PetEditForm, PetCreateForm, PetDeleteForm
 from petstagram.pets.models import Pet
 
 
+@login_required
 # pets/views.py
 def add_pet(request):
     if request.method == "GET":
@@ -13,7 +15,7 @@ def add_pet(request):
         form = PetCreateForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('profile details', pk=1)
+            return redirect('profile details', pk=request.user.pk)
 
     context = {
         'form': form,
@@ -84,6 +86,8 @@ def delete_pet(request, username, pet_slug):
     context = {
         'form': form,
         'pet': pet,
+        'pet_slug': pet_slug,
+        'username': username,
     }
 
     return render(

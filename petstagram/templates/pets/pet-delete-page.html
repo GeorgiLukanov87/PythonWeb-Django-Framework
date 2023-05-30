@@ -8,7 +8,7 @@
             <!-- Starts Delete Pet Form -->
             <form method="post">
 
-                {{ form }}
+                {{ form.as_p }}
                 {% csrf_token %}
 
                 <!-- Delete Pet Button -->
