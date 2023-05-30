@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from petstagram.common.forms import CommentForm
+from petstagram.core.find_pet import get_pet_by_name_and_username
 from petstagram.pets.forms import PetEditForm, PetCreateForm, PetDeleteForm
 from petstagram.pets.models import Pet
 
@@ -12,8 +13,10 @@ def add_pet(request):
     else:
         form = PetCreateForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('profile details', pk=1)
+            pet = form.save(commit=False)
+            pet.user = request.user
+            pet.save()
+            return redirect('profile details', pk=request.user.pk)
 
     context = {
         'form': form,
@@ -26,8 +29,11 @@ def add_pet(request):
     )
 
 
+
+
+
 def show_pet_details(request, username, pet_slug):
-    pet = Pet.objects.get(slug=pet_slug)
+    pet = get_pet_by_name_and_username(pet_slug, username)
     all_photos = pet.photo_set.all()
     comment_form = CommentForm()
 
