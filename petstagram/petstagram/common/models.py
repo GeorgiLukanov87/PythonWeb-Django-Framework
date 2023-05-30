@@ -37,3 +37,4 @@ class Like(models.Model):
         Photo,
         on_delete=models.CASCADE,
     )
+

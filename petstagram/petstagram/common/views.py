@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, resolve_url
 from pyperclip import copy
 
@@ -9,7 +10,6 @@ from petstagram.photos.models import Photo
 # common/views.py
 def show_index(request):
     all_photos = Photo.objects.all()
-    print(str(p.tagged_pets) for p in all_photos)
     comment_form = CommentForm()
     search_form = SearchForm()
 
@@ -31,6 +31,7 @@ def show_index(request):
     )
 
 
+@login_required
 def like_functionality(request, photo_id):
     photo = Photo.objects.get(id=photo_id)
     liked_object = Like.objects.filter(to_photo_id=photo_id).first()
@@ -50,6 +51,7 @@ def copy_link_to_clipboard(request, photo_id):
     return redirect(request.META('HTTP_REFERER') + f'#{photo_id}')
 
 
+@login_required
 def add_comment(request, photo_id):
     if request.method == 'POST':
         photo = Photo.objects.get(id=photo_id)
