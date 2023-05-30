@@ -1,5 +1,10 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.contrib.auth import views as auth_views
+
+
+class SignInView(auth_views.LoginView):
+    template_name = 'accounts/login-page.html'
 
 
 def register(request):
@@ -22,5 +27,5 @@ def delete_profile(request, pk):
     return render(request, 'accounts/profile-delete-page.html')
 
 
-def out(request):
+def to_github(request):
     return HttpResponseRedirect("https://github.com/GeorgiLukanov87/PythonWeb-Django-Framework/tree/main/petstagram")

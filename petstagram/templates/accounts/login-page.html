@@ -1,35 +1,30 @@
 {% extends 'base.html' %}
+{% load placeholders %}
 {% block content %}
 
-<main>
+    <main>
 
-    <!-- Start Login Section-->
-    <div class="login-register-div">
-        <div class="login-register-box">
-            <h1>Petstagram</h1>
-            <!-- Start Login Form-->
-            <form action="#">
-                <p>
-                    <label for="id_username">Username:</label>
-                    <input type="text" placeholder="Username">
-                </p>
-                <p>
-                    <label for="id_password">Password:</label>
-                    <input type="password" placeholder="Password">
-                </p>
+        <!-- Start Login Section-->
+        <div class="login-register-div">
+            <div class="login-register-box">
+                <h1>Petstagram</h1>
 
-                <!-- Login Button-->
-                <button type="submit">Log in</button>
-            </form>
-            <!-- End Login Form -->
+                <form action="{% url 'login' %}">
+                    <input type="hidden" name="next" value="{{ next }}">
+                    {{ form.username|placeholder:'Add name...' }}
+                    {{ form.password|placeholder:'Enter password...'  }}
+                    {% csrf_token %}
+                    <button type="submit">Log in</button>
+                </form>
 
+
+            </div>
+            <div class="second-option">
+
+
+                <p>Don't have account? <a href="{% url 'register' %}">Register</a></p>
+            </div>
         </div>
-        <div class="second-option">
-
-            <!-- Link to Register Page-->
-            <p>Don't have account? <a href="{% url 'register' %}">Register</a></p>
-        </div>
-    </div>
-</main>
+    </main>
 
 {% endblock %}
