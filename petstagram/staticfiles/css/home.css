@@ -22,7 +22,8 @@ body {
 .nav-item:hover {
     background-color: #04bb2f;
     border-radius: 6px;
-    transition: 200ms linear;
+    transition: 150ms linear;
+    scale: 1.2;
 }
 
 .navbar {
@@ -39,7 +40,7 @@ body {
 }
 
 .container {
-    padding: 15px 0;
+    padding: 22px 0;
     width: 75%;
     display: flex;
     align-items: center;
@@ -98,7 +99,6 @@ body {
     margin-top: -0.8rem;
 }
 
-
 .searchbar input::placeholder {
     font-weight: lighter;
     color: rgb(172, 172, 172);
@@ -114,13 +114,15 @@ body {
 .nav-links {
     font-weight: lighter;
     color: rgb(172, 172, 172);
-    /* background: #333 ; */
+
 }
 
 .nav-group .nav-item {
     list-style-type: none;
-    margin: 0 10px;
-    padding: 8px;
+    margin: 0 12px;
+    border: 1px solid #d0c3c5;
+    border-radius: 10px;
+    padding: 12px;
 
 }
 
@@ -134,6 +136,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .action .profile {
