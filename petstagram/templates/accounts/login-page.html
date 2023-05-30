@@ -13,7 +13,7 @@
                     {{ form.username|placeholder:'Add name...' }}
                     {{ form.password|placeholder:'Enter password...' }}
                     {% csrf_token %}
-                    <button type="submit">Log in</button>
+                    <button id='toast-click' type="submit" onclick="myFunction()">Log in</button>
                 </form>
 
             </div>
@@ -22,5 +22,4 @@
             </div>
         </div>
     </main>
-
 {% endblock %}
