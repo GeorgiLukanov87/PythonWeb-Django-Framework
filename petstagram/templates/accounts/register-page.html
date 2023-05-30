@@ -1,17 +1,21 @@
 {% extends 'base.html' %}
+{% load placeholders %}
 {% block content %}
 
-    <!-- Start Register Section -->
     <div class="login-register-div">
         <div class="login-register-box">
             <h1>Petstagram</h1>
-            <!-- Start Register Form -->
-            <form action="">
 
-                <input type="text" placeholder="Username">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <input type="password" placeholder="Repeat Password">
+            <form action="{% url 'register' %}" method="post">
+
+                <input type="hidden" name="next" value="{{ next }}">
+
+                {{ form.username|placeholder:'Enter username...' }}
+                {{ form.email|placeholder:'Enter email...' }}
+                {{ form.password1|placeholder:'Password...' }}
+                {{ form.password2|placeholder:'Confirm password...' }}
+
+                {% csrf_token %}
 
                 <button type="submit">Register</button>
             </form>
