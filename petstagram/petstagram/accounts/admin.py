@@ -13,7 +13,7 @@ class UserAdmin(auth_admin.UserAdmin):
 """"
 user1-
 
-gosho
+gosho1
 gosho@asdf1234
 
 """

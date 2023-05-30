@@ -1,6 +1,8 @@
 import os.path
 from pathlib import Path
 
+from django.urls import reverse_lazy
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-y7()dx0*+cd*)h6yx95a!7_@2bb**r=$f2d683$v7adg2joh#@'
@@ -108,3 +110,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 AUTH_USER_MODEL = 'accounts.AppUser'
+
+LOGIN_REDIRECT_URL = reverse_lazy('show index')
