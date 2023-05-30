@@ -11,6 +11,9 @@ class UserAdmin(auth_admin.UserAdmin):
 
 
 """"
+user1-
+
 gosho
 gosho@asdf1234
+
 """

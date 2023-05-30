@@ -21,10 +21,6 @@ class Gender(ChoicesEnumMixin, Enum):
     DoNotShow = 'Do not show'
 
 
-print(Gender.choices())
-print(Gender.max_len())
-
-
 class AppUser(auth_models.AbstractUser):
     FIRST_NAME_MAX_LEN = 30
     FIRST_NAME_MIN_LEN = 2
