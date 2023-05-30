@@ -2,12 +2,9 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from petstagram.common.forms import CommentForm
+from petstagram.core.find_pet import get_pet_by_name_and_username
+from petstagram.core.is_owner import is_owner
 from petstagram.pets.forms import PetEditForm, PetCreateForm, PetDeleteForm
-from petstagram.pets.models import Pet
-
-
-def is_owner(request, obj):
-    return request.user == obj.user
 
 
 @login_required
@@ -36,7 +33,7 @@ def add_pet(request):
 
 
 def show_pet_details(request, username, pet_slug):
-    pet = Pet.objects.get(slug=pet_slug)
+    pet = get_pet_by_name_and_username(pet_slug, username)
     all_photos = pet.photo_set.all()
     comment_form = CommentForm()
 
@@ -59,7 +56,7 @@ def show_pet_details(request, username, pet_slug):
 # http://127.0.0.1:8000/pets/goto/pet/pesho-5/
 
 def edit_pet(request, username, pet_slug):
-    pet = Pet.objects.get(slug=pet_slug)
+    pet = get_pet_by_name_and_username(pet_slug, username)
 
     if not is_owner(request, pet):
         return redirect('show pet details', username=username, pet_slug=pet_slug)
@@ -86,7 +83,7 @@ def edit_pet(request, username, pet_slug):
 
 
 def delete_pet(request, username, pet_slug):
-    pet = Pet.objects.get(slug=pet_slug)
+    pet = get_pet_by_name_and_username(pet_slug, username)
     if request.method == 'GET':
         form = PetDeleteForm(instance=pet)
     else:
