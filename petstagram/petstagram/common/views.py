@@ -1,6 +1,7 @@
+import pyperclip
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, resolve_url
-from pyperclip import copy
+from django.shortcuts import render, redirect
+from django.urls import reverse
 
 from petstagram.common.forms import CommentForm, SearchForm
 from petstagram.common.models import Like
@@ -45,10 +46,16 @@ def like_functionality(request, photo_id):
     return redirect(request.META['HTTP_REFERER'] + f'#{photo_id}')
 
 
-def copy_link_to_clipboard(request, photo_id):
-    copy(request.META['HTTP_HOST'] + resolve_url('show photo details', photo_id))
+def get_photo_url(request, photo_id):
+    return request.META['HTTP_REFERER'] + f'#photo-{photo_id}'
 
-    return redirect(request.META('HTTP_REFERER') + f'#{photo_id}',)
+
+def share(request, photo_id):
+    photo_details_url = reverse('show photo details', kwargs={
+        'pk': photo_id
+    })
+    pyperclip.copy(photo_details_url)
+    return redirect(get_photo_url(request, photo_id))
 
 
 @login_required
@@ -63,8 +70,6 @@ def add_comment(request, photo_id):
             comment.to_photo = photo
             comment.user = request.user
             comment.save()
-
-        # return redirect('show index')
 
         return redirect(
             request.META['HTTP_REFERER'] + f'#{photo_id}'
