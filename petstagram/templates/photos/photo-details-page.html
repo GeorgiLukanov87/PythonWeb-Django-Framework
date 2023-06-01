@@ -5,16 +5,11 @@
     <main>
         <div class="container">
             <div class="col-9">
-
-                <!-- Start Pet Photo Post Section -->
-                <div class="card">
+                <div class="card" style="border-radius:12px;">
                     <div class="top">
 
-                        <!-- Start User Details and Image Location Section -->
                         <div class="userDetails">
-
-                            <!-- Link to User Profile Details Page-->
-                            <a href="#">
+                            <a href="{% url 'profile details' pk=request.user.pk %}">
                                 <div class="profilepic">
                                     <div class="profile_img">
                                         <div class="image">
@@ -26,7 +21,7 @@
                             <h3>
 
                                 <!-- Link to User Profile Details Page -->
-                                <a href="#">
+                                <a href="{% url 'profile details' pk=request.user.pk %}">
                                     {% if photo.user.get_full_name %}
                                         {{ photo.user.get_full_name }}
                                     {% else %}
@@ -152,7 +147,7 @@
                         <p class="likes">{{ likes.count }} likes</p>
 
                         {% for pet in photo.tagged_pets.all %}
-                            <a href="{% url 'show pet details' 'username' pet.slug %}">
+                            <a href="{% url 'show pet details' username=pet.user.username pet_slug=pet.slug %}">
                                 <p class="message">
                                     <b>{{ pet.name }}</b>
                                 </p>
@@ -180,9 +175,9 @@
                                             <p>
 
                                                 {% if comment.user.get_full_name %}
-                                                    <a href="#"> {{ comment.user.get_full_name }} : </a>
+                                                    <a href="{% url 'profile details' pk=comment.user.pk %}"> {{ comment.user.get_full_name }} : </a>
                                                 {% else %}
-                                                    <a href="">{{ comment.user.username }} : </a>
+                                                    <a href="{% url 'profile details' pk=comment.user.pk %}">{{ comment.user.username }} : </a>
                                                 {% endif %}
                                             <h3 style="color:green">
                                                 <br>

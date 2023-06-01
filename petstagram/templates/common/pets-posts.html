@@ -102,7 +102,7 @@
             <p class="likes">{{ photo.like_set.count }} Likes</p>
 
             {% for pet in photo.tagged_pets.all %}
-                <a href="{% url 'show pet details' 'username' pet.slug %}">
+                <a href="{% url 'show pet details' username=pet.user.username pet_slug=pet.slug %}">
                     <p class="message">
                         <b>{{ pet.name }}</b>
                     </p>
