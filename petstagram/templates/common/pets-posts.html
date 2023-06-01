@@ -109,6 +109,13 @@
                 </a>
             {% endfor %}
 
+            {# TODO when no user loged , do not show details#}
+            {#            {% if photo.user.is_authenticated %}#}
+            {#                <h1>TRUE</h1>#}
+            {#            {% else %}#}
+            {#                <h1>FALSE</h1>#}
+            {#            {% endif %}#}
+
             <a href="{% url 'show photo details' photo.id %}">
                 <h4 class="details">See details</h4>
             </a>

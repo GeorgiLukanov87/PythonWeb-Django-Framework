@@ -37,7 +37,6 @@
                                 <!-- IF the viewer is the creator of the photo -->
                                 {% if is_owner %}
                                     <div class="edit-delete-btns">
-
                                         <!-- Link to Edit Pet Photo Page -->
                                         <a href="{% url 'edit photo' photo.pk %}">
                                             <img class="edit-img" src="{% static '/images/edit-pen-icon-6.jpg' %}"
@@ -50,7 +49,7 @@
                                                  alt="bin button">
                                         </a>
                                     </div>
-                                    <!-- End IF the viewer is the creator of the photo -->
+
                                 {% endif %}
                             </h3>
                         </div>
