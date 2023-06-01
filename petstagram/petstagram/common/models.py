@@ -16,13 +16,13 @@ class Comment(models.Model):
 
     date_time_of_publication = models.DateField(
         auto_now_add=True,
+        blank=True,
         null=False,
-        blank=False,
     )
 
     to_photo = models.ForeignKey(
         Photo,
-        on_delete=models.CASCADE,
+        on_delete=models.RESTRICT,
         null=False,
         blank=True,
     )
@@ -30,7 +30,6 @@ class Comment(models.Model):
     user = models.ForeignKey(
         UserModel,
         on_delete=models.RESTRICT,
-
     )
 
     class Meta:
@@ -40,7 +39,7 @@ class Comment(models.Model):
 class Like(models.Model):
     to_photo = models.ForeignKey(
         Photo,
-        on_delete=models.CASCADE,
+        on_delete=models.RESTRICT,
     )
 
     # TODO

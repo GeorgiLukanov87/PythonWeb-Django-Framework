@@ -61,6 +61,7 @@ def add_comment(request, photo_id):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.to_photo = photo
+            comment.user = request.user
             comment.save()
 
         return redirect('show index')
