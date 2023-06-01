@@ -151,28 +151,16 @@
                         <!-- Number of Likes for the Photo -->
                         <p class="likes">{{ likes.count }} likes</p>
 
-                        <!-- Start Tagged Pets Section-->
                         {% for pet in photo.tagged_pets.all %}
-                            <!-- Link to First Tagged Pet Details Page -->
-
-                            <a href="#">
-                                <p class="message">
-                                    <b>Sasho</b>
-                                </p>
-                            </a>
-                            <!-- Link to Second Tagged Pet Details Page -->
-                            <a href="{% url 'show pet details' username=pet.user.username pet_slug=pet.slug %}">
+                            <a href="{% url 'show pet details' 'username' pet.slug %}">
                                 <p class="message">
                                     <b>{{ pet.name }}</b>
                                 </p>
                             </a>
-                            <!-- End Tagged Pets Section-->
                         {% endfor %}
 
-                        <!-- Photo description -->
-                        <p class="pet-details">{{ photo.description }}</p>
 
-                        <!-- Date of Publication or edit of the Photo -->
+                        <p class="pet-details">{{ photo.description }}</p>
                         <h5 class="postTime">{{ photo.date_of_publication }}</h5>
 
                         <!-- Start Comments Section -->
@@ -184,28 +172,32 @@
                                             <div class="profilepic">
                                                 <div class="profile_img">
                                                     <div class="image">
-                                                        <!-- User Profile Image -->
+
                                                         <img src="{% static '/images/person.png' %}" alt="img8">
                                                     </div>
                                                 </div>
                                             </div>
                                             <p>
-                                                <!-- Link to User Profile Details Page-->
-                                                <!-- User First and/or Last Name or username-->
-                                                <a href="">Steven Ivanov</a>
-                                                <!-- User Comment -->
-                                                {{ comment.text }}
+
+                                                {% if comment.user.get_full_name %}
+                                                    <a href="#"> {{ comment.user.get_full_name }} : </a>
+                                                {% else %}
+                                                    <a href="">{{ comment.user.username }} : </a>
+                                                {% endif %}
+                                            <h3 style="color:green">
+                                                <br>
+                                                {{ comment.text }}</h3>
+
                                             </p>
                                         </div>
                                         <span>{{ comment.date_time_of_publication }}</span>
                                     </div>
                                 </div>
                             </div>
-                            <!-- End Comments Section -->
+
                         {% endfor %}
                     </div>
 
-                    <!-- Start Add Comments Section -->
                     <div class="addComments">
                         <div class="reaction">
                             <h3>
