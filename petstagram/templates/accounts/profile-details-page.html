@@ -34,13 +34,13 @@
 
                 <div class="data">
                     <!-- Pet Total Photos -->
-                    <span>4</span>
+                    <span>{{ photos_count }}</span>
                     <p>photos</p>
 
-                    <span>7</span>
+                    <span>{{ pets_count }}</span>
                     <p>pets</p>
 
-                    <span>4232</span>
+                    <span>{{ likes_count }}</span>
                     <p>likes</p>
                 </div>
 
@@ -74,10 +74,14 @@
                             </div>
                         </div>
                         <p>{{ pet.name }}</p>
+
                     </div>
                 </a>
 
             {% endfor %}
+            {% if not object.pet_set.all %}
+                <img class="no-posts" src="{% static 'images/no_posts.png' %}" alt="no posts image">
+            {% endif %}
         </div>
     </div>
     <!-- End Pets Data Section -->

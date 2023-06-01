@@ -9,11 +9,13 @@
                         <div class="profile_img">
                             <div class="image">
                                 <img src="{% static 'images/person.png' %}" alt="img8">
+
                             </div>
                         </div>
                     </div>
                 </a>
                 <h3>
+
                     <a href="{% url 'profile details' pk=photo.user.pk %}">
                         {% if photo.user.get_full_name %}
                             {{ photo.user.get_full_name }}
@@ -109,16 +111,23 @@
                 </a>
             {% endfor %}
 
-            {# TODO when no user loged , do not show details#}
-            {#            {% if photo.user.is_authenticated %}#}
-            {#                <h1>TRUE</h1>#}
-            {#            {% else %}#}
-            {#                <h1>FALSE</h1>#}
-            {#            {% endif %}#}
+            {#             TODO when no user loged , do not show details#}
+            {#                        {% if photo.user.is_authenticated %}#}
+            {#                            <h1>TRUE</h1>#}
+            {#                        {% else %}#}
+            {#                            <h1>FALSE</h1>#}
+            {#                        {% endif %}#}
 
-            <a href="{% url 'show photo details' photo.id %}">
-                <h4 class="details">See details</h4>
-            </a>
+
+            {% if  request.user.is_authenticated %}
+                <a href="{% url 'show photo details' photo.id %}">
+                    <h4 class="details">See details</h4>
+                </a>
+            {% else %}
+                <a href="{% url 'add pet' %}">
+                    <h4 class="details">See details</h4>
+                </a>
+            {% endif %}
 
             <h5 class="postTime">{{ photo.date_of_publication }}</h5>
 

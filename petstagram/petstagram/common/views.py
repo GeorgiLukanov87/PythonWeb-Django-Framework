@@ -48,7 +48,7 @@ def like_functionality(request, photo_id):
 def copy_link_to_clipboard(request, photo_id):
     copy(request.META['HTTP_HOST'] + resolve_url('show photo details', photo_id))
 
-    return redirect(request.META('HTTP_REFERER') + f'#{photo_id}')
+    return redirect(request.META('HTTP_REFERER') + f'#{photo_id}',)
 
 
 @login_required

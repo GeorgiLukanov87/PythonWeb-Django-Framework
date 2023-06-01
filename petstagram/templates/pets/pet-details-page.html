@@ -2,59 +2,11 @@
 {% load static %}
 {% block content %}
 
-    {#    <main>#}
-    {#        <div class="pet-profile">#}
-    {#            <!-- Start Pet Personal Data Section -->#}
-    {#            <div class="profile">#}
-    {#                <div class="profile-data">#}
-    {#                    <div class="profile_img">#}
-    {#                        <div class="image">#}
-    {#                            <!-- Pet URL Image -->#}
-    {#                            <img src="{{ pet.personal_photo }}"#}
-    {#                                 alt="img8">#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                    <div class="personal">#}
-    {#                        <div class="edit">#}
-    {#                            <!-- Pet Name -->#}
-    {#                            <p>{{ pet.name }}</p>#}
-    {#                            <!-- Pet Edit Button -->#}
-    {#                            <a href="{% url 'edit pet' 'username'  pet.slug %}">#}
-    {#                                <img class="edit-img" src="{% static 'images/edit-pen-icon-6.jpg' %}" alt="edit button">#}
-    {#                            </a>#}
-    {#                            <!-- Pet Delete Button -->#}
-    {#                            <a href="{% url 'delete pet' 'username' pet.slug %}">#}
-    {#                                <img class="bin-img" src="{% static 'images/icon-remove-22.jpg' %}" alt="bin button">#}
-    {#                            </a>#}
-    {#                        </div>#}
-    {#                        <div class="data">#}
-    {#                            <!-- Pet Total Photos -->#}
-    {#                            <span>{{ all_photos.count }}</span>#}
-    {#                            <p>photos</p>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#            <!-- End Pet Personal Data Section -->#}
-    {##}
-    {#            <div class="pet-posts">#}
-    {#                {% if all_photos %}#}
-    {#                <!-- IF Photos Start Pet Photos Post Section -->#}
-    {#                    {% include 'common/pets-posts.html' %}#}
-    {#                {% else %}#}
-    {#                <img class="no-posts" src="{% static 'images/no_posts.png' %}" alt="no posts image">#}
-    {#                {% endif %}#}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </main>#}
-
-
     <div class="pet-profile">
         <div class="profile">
             <div class="profile-data">
                 <div class="profile_img">
                     <div class="image">
-                        <!-- Pet URL Image -->
                         <img src="{{ pet.personal_photo }}"
                              alt="image of {{ pet.name }}">
                     </div>
@@ -66,7 +18,6 @@
                             <a href="{% url 'edit pet' username=username pet_slug=pet.slug %}">
                                 <img class="edit-img" src="{% static 'images/edit-pen-icon-6.jpg' %}" alt="edit button">
                             </a>
-                            <!-- Pet Delete Button -->
                             <a href="{% url 'delete pet' username=username pet_slug=pet.slug %}">
                                 <img class="bin-img" src="{% static 'images/icon-remove-22.jpg' %}" alt="bin button">
                             </a>
@@ -80,12 +31,15 @@
             </div>
         </div>
         <div class="pet-posts">
-            {% for photo in pet_photos %}
+
+            {% if all_photos %}
                 {% include 'common/pets-posts.html' with photo=photo %}
-            {% empty %}
-                <img class="no-posts" src="{% static 'images/no_posts.png' %}" alt="no posts image">
-            {% endfor %}
+
+            {% else %}
+
+            {% endif %}
 
         </div>
     </div>
+
 {% endblock %}

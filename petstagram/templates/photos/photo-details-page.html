@@ -5,7 +5,8 @@
     <main>
         <div class="container">
             <div class="col-9">
-                <div class="card" style="border-radius:12px;">
+                <div class="card"
+                     style="background-color: #e5efd4;border-radius: 12px;border:2px solid black;font-size: 46px">
                     <div class="top">
 
                         <div class="userDetails">
@@ -174,9 +175,11 @@
                                             <p>
 
                                                 {% if comment.user.get_full_name %}
-                                                    <a href="{% url 'profile details' pk=comment.user.pk %}"> {{ comment.user.get_full_name }} : </a>
+                                                    <a href="{% url 'profile details' pk=comment.user.pk %}"> {{ comment.user.get_full_name }}
+                                                        : </a>
                                                 {% else %}
-                                                    <a href="{% url 'profile details' pk=comment.user.pk %}">{{ comment.user.username }} : </a>
+                                                    <a href="{% url 'profile details' pk=comment.user.pk %}">{{ comment.user.username }}
+                                                        : </a>
                                                 {% endif %}
                                             <h3 style="color:green">
                                                 <br>

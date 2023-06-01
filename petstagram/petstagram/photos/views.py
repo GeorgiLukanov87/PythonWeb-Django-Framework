@@ -1,3 +1,4 @@
+from django.contrib.auth.models import AnonymousUser
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
@@ -39,7 +40,8 @@ def show_photo_details(request, pk):
         'comments': comments,
         'comment_form': comment_form,
         'is_owner': request.user == photo.user,
-        # 'is_authenticated': request.user.is_active,
+
+
     }
 
     return render(
@@ -47,35 +49,6 @@ def show_photo_details(request, pk):
         'photos/photo-details-page.html',
         context,
     )
-
-
-# def edit_photo(request, pk):
-#     photo = Photo.objects.get(pk=pk)
-#
-#     if request.method == 'GET':
-#         form = PhotoEditForm(instance=photo)
-#     else:
-#         form = PhotoEditForm(request.POST, instance=photo)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('show photo details', pk=pk)
-#
-#     context = {
-#         'form': form,
-#         'photo': photo,
-#     }
-#
-#     return render(
-#         request,
-#         'photos/photo-edit-page.html',
-#         context,
-#     )
-#
-#
-# def delete_photo(request, pk):
-#     photo = Photo.objects.get(pk=pk)
-#     photo.delete()
-#     return redirect('show index')
 
 
 def get_post_photo_form(request, form, success_url, template_path, pk=None):
