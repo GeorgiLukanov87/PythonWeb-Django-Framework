@@ -1,14 +1,10 @@
 {% load static %}
 {% for photo in all_photos %}
-    <!-- Start Pet Photos Post Section -->
-    <!-- Start First Pet Photo Post -->
-    <div class="card" style="background-color: #e5efd4;border-radius: 12px;border:2px solid black;font-size: 46px">
 
-        <!-- Start User Details and Image Location -->
+    <div class="card" style="background-color: #e5efd4;border-radius: 12px;border:2px solid black;font-size: 46px">
         <div class="top">
             <div class="userDetails">
-                <!-- Link to User Profile Page -->
-                <a href="#">
+                <a href="{% url 'profile details' pk=photo.user.pk %}">
                     <div class="profilepic">
                         <div class="profile_img">
                             <div class="image">
@@ -18,34 +14,28 @@
                     </div>
                 </a>
                 <h3>
-                    <!-- Link to User Profile Page -->
-                    <a href="#">
-                        <!-- if user has first name and last name -->
-                        Diyan Kalaydzhiev
-                        <!-- else -->
-                        <!-- show user username -->
+                    <a href="{% url 'profile details' pk=photo.user.pk %}">
+                        {% if photo.user.get_full_name %}
+                            {{ photo.user.get_full_name }}
+                        {% else %}
+                            {{ photo.user.username }}
+                        {% endif %}
                     </a>
                     <br>
-                    <!-- if the photo has location -->
                     {% if photo.location %}
                         <span>{{ photo.location }}</span>
                     {% endif %}
                 </h3>
             </div>
         </div>
-        <!-- End User Details and Image Location -->
 
-        <!-- Start Pet Photo -->
         <div class="imgBx" id="photo-{{ photo.id }}">
-            <img src="{{ photo.photo.url }}" alt="post" class="cover">
+            <img src="{{ photo.photo.url }}" alt="photo url" class="cover">
         </div>
-        <!-- End Pet Photo -->
 
-        <!-- Start Like and Share Buttons -->
         <div class="bottom">
             <div class="actionBtns">
                 <div class="left">
-                    <!-- Start Like Button -->
                     <span class="heart">
 									<a href="{% url 'like' photo.id %}">
 										<!-- if user has liked the photo -->
@@ -93,9 +83,7 @@
                                         {% endif %}
 								</a>
 								</span>
-                    <!-- End Like Button -->
 
-                    <!-- Start Share Button -->
                     <a href="{% url 'show photo details' photo.id %}">
                         <svg aria-label="Share Post" class="_8-yf5 " color="#262626" fill="#262626"
                              height="24" role="img" viewBox="0 0 48 48" width="24">
@@ -108,56 +96,41 @@
                             </path>
                         </svg>
                     </a>
-                    <!-- End Share Button -->
 
                 </div>
             </div>
-            <!-- End Like and Share Buttons -->
-
-            <!-- Number of Likes per Photo -->
             <p class="likes">{{ photo.like_set.count }} Likes</p>
 
-
-            <!-- Start Tagged Pets -->
             {% for pet in photo.tagged_pets.all %}
-                <!-- Link to First Tagged Pet Details Page-->
                 <a href="{% url 'show pet details' 'username' pet.slug %}">
                     <p class="message">
                         <b>{{ pet.name }}</b>
                     </p>
                 </a>
             {% endfor %}
-            <!-- End Tagged Pets -->
 
-            <!-- Link to Photo Details Page -->
             <a href="{% url 'show photo details' photo.id %}">
                 <h4 class="details">See details</h4>
             </a>
 
-            <!-- Date of Publication -->
             <h5 class="postTime">{{ photo.date_of_publication }}</h5>
 
-            <!-- Start Add Comments Section -->
             <div class="addComments">
                 <div class="reaction">
                     <h3>
                         <i class="far fa-smile"></i>
                     </h3>
                 </div>
-                <!-- Start Add Comments Form -->
+
                 <form method="post" action="{% url 'add comment' photo.id %}">
+
                     {{ comment_form }}
                     {% csrf_token %}
+
                     <button type="submit">Post</button>
                 </form>
-                <!-- End Add Comments Form -->
 
             </div>
-            <!-- End Add Comments Section -->
-
         </div>
     </div>
-    <!-- End First Pet Photo Post -->
-
-    <!-- End Pet Photos Post Section -->
 {% endfor %}

@@ -8,7 +8,7 @@ UserModel = get_user_model()
 
 class Comment(models.Model):
     COMMENT_TEXT_MAX_LEN = 300
-    text = models.TextField(
+    text = models.CharField(
         max_length=COMMENT_TEXT_MAX_LEN,
         null=False,
         blank=False,
@@ -16,16 +16,21 @@ class Comment(models.Model):
 
     date_time_of_publication = models.DateField(
         auto_now_add=True,
+        null=False,
+        blank=False,
     )
 
     to_photo = models.ForeignKey(
         Photo,
         on_delete=models.CASCADE,
+        null=False,
+        blank=True,
     )
 
     user = models.ForeignKey(
         UserModel,
         on_delete=models.RESTRICT,
+
     )
 
     class Meta:
@@ -37,4 +42,6 @@ class Like(models.Model):
         Photo,
         on_delete=models.CASCADE,
     )
+
+    # TODO
 

@@ -65,7 +65,7 @@
 
             {% for pet in object.pet_set.all %}
 
-                <a href="{% url 'show pet details' username=object.username pet_slug=pet.slug %}">
+                <a href="{% url 'show pet details' pet_slug=pet.slug username=pet.user.username %}">
                     <div class="head-pet">
                         <div class="status">
                             <div class="image">
