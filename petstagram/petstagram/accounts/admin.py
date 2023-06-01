@@ -55,11 +55,3 @@ class UserAdmin(auth_admin.UserAdmin):
             },
         ),
     )
-
-
-""""
-
-gosho1
-gosho@asdf1234
-
-"""
