@@ -115,9 +115,11 @@ body {
     color: black;
     font-family: 'Indie Flower', cursive;
 }
-.home i:hover{
+
+.home i:hover {
     text-shadow: 2px 2px 1px black;
 }
+
 .nav-links {
     font-weight: lighter;
     color: rgb(172, 172, 172);
@@ -471,4 +473,36 @@ a {
 
 .cat-wrapper {
     padding-bottom: 300px;
+}
+
+#post-button {
+    font-size: 26px;
+    font-weight: bold;
+    color: #047304;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+#post-button:hover {
+    color: red;
+    text-shadow: 1px 1px 1px black;
+    scale: 1.1;
+}
+
+.details {
+    color: #c773e7;
+    text-shadow: 1px 1px 1px black;
+}
+
+.details:hover {
+    color: blue;
+    text-shadow: 1px 1px 1px black;
+
+
+}
+
+._8-yf5:hover {
+    scale: 1.5;
+    transition: 200ms linear;
+
 }

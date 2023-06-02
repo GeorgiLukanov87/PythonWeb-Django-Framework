@@ -1,7 +1,8 @@
 {% load static %}
 {% for photo in all_photos %}
 
-    <div class="card" style="background-color: #e5efd4;border-radius: 12px;border:2px solid black;font-size: 46px">
+    <div class="card" style="background-color: #e5efd4;border-radius: 12px;border:2px solid black;font-size: 46px;
+box-shadow: 0px 0px 12px 1px #7c7a7a;">
         <div class="top">
             <div class="userDetails">
                 <a href="{% url 'profile details' pk=photo.user.pk %}">
@@ -120,7 +121,7 @@
                 </a>
             {% else %}
                 <a href="{% url 'redirect_to_index' %}">
-                    <h4 class="details">See details</h4>
+                    <h4 class="details" id="details-button">See details</h4>
                 </a>
             {% endif %}
 
@@ -138,10 +139,11 @@
                     {{ comment_form }}
                     {% csrf_token %}
 
-                    <button type="submit">Post</button>
+                    <button type="submit" id="post-button">POST</button>
                 </form>
 
             </div>
         </div>
     </div>
 {% endfor %}
+
