@@ -76,3 +76,8 @@ def add_comment(request, photo_id):
         return redirect(
             request.META['HTTP_REFERER'] + f'#{photo_id}'
         )
+
+
+@login_required
+def redirect_to_index(request):
+    return redirect('show index')

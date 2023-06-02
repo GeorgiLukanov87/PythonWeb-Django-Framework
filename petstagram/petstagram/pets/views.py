@@ -44,7 +44,6 @@ def show_pet_details(request, username, pet_slug):
         'username': username,
         'pet_slug': pet_slug,
         'is_owner': pet.user == request.user,
-        'is_authenticated': request.user.is_authenticated,
 
     }
 

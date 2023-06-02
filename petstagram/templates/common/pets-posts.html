@@ -23,10 +23,13 @@
                             {{ photo.user.username }}
                         {% endif %}
                     </a>
+
                     <br>
+
                     {% if photo.location %}
                         <span>{{ photo.location }}</span>
                     {% endif %}
+
                 </h3>
             </div>
         </div>
@@ -111,20 +114,12 @@
                 </a>
             {% endfor %}
 
-            {#             TODO when no user loged , do not show details#}
-            {#                        {% if photo.user.is_authenticated %}#}
-            {#                            <h1>TRUE</h1>#}
-            {#                        {% else %}#}
-            {#                            <h1>FALSE</h1>#}
-            {#                        {% endif %}#}
-
-
-            {% if  request.user.is_authenticated %}
+            {% if request.user.is_authenticated %}
                 <a href="{% url 'show photo details' photo.id %}">
                     <h4 class="details">See details</h4>
                 </a>
             {% else %}
-                <a href="{% url 'add pet' %}">
+                <a href="{% url 'redirect_to_index' %}">
                     <h4 class="details">See details</h4>
                 </a>
             {% endif %}
