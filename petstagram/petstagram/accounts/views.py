@@ -1,5 +1,4 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
 from django.contrib.auth import views as auth_views, get_user_model
 from django.urls import reverse_lazy
 from django.views import generic
@@ -32,8 +31,8 @@ class UserDetailsView(generic.DetailView):
 
         context['is_owner'] = self.request.user == self.object
 
-        photos = self.object.photo_set \
-            .prefetch_related('like_set')
+        # very important about queries...fast operation !single query from db filtered
+        photos = self.object.photo_set.prefetch_related('like_set')
 
         context['pets_count'] = self.object.pet_set.count()
         context['photos_count'] = photos.count()
