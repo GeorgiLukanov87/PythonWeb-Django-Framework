@@ -1,10 +1,9 @@
-from django.contrib.auth.models import AnonymousUser
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from petstagram.common.forms import CommentForm
+from petstagram.core.photo_utils import find_photo_by_pk
 from petstagram.photos.forms import PhotoCreateForm, PhotoEditForm, PhotoDeleteForm
-from petstagram.photos.models import Photo
 
 
 # photos/views.py
@@ -29,7 +28,7 @@ def add_photo(request):
 
 
 def show_photo_details(request, pk):
-    photo = Photo.objects.get(pk=pk)
+    photo = find_photo_by_pk(pk)
     likes = photo.like_set.all()
     comments = photo.comment_set.all()
     comment_form = CommentForm()
@@ -40,7 +39,6 @@ def show_photo_details(request, pk):
         'comments': comments,
         'comment_form': comment_form,
         'is_owner': request.user == photo.user,
-
 
     }
 
@@ -66,8 +64,7 @@ def get_post_photo_form(request, form, success_url, template_path, pk=None):
 
 
 def edit_photo(request, pk):
-    photo = Photo.objects.filter(pk=pk) \
-        .get()
+    photo = find_photo_by_pk(pk)
     return get_post_photo_form(
         request,
         PhotoEditForm(request.POST or None, instance=photo),
@@ -78,8 +75,8 @@ def edit_photo(request, pk):
 
 
 def delete_photo(request, pk):
-    photo = Photo.objects.filter(pk=pk) \
-        .get()
+    photo = find_photo_by_pk(pk)
+
     return get_post_photo_form(
         request,
         PhotoDeleteForm(request.POST or None, instance=photo),
