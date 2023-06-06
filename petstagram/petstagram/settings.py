@@ -112,3 +112,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTH_USER_MODEL = 'accounts.AppUser'
 
 LOGIN_REDIRECT_URL = reverse_lazy('show index')
+
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'petstragram.info.sender@gmail.com'
+# EMAIL_HOST_PASSWORD = 'petstagram.sender12345'
+#
+# DEFAULT_FROM_EMAIL = 'petstragram.info.sender@gmail.com'

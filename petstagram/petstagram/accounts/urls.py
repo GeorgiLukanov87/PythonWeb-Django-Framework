@@ -20,3 +20,6 @@ urlpatterns = (
 
     path('to_github/', to_github, name='go to github'),
 )
+
+# need to add this to work with signals->
+# from .signals import *
