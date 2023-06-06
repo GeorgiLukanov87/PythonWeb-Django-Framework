@@ -22,14 +22,14 @@ class Comment(models.Model):
 
     to_photo = models.ForeignKey(
         Photo,
-        on_delete=models.RESTRICT,
+        on_delete=models.CASCADE,
         null=False,
         blank=True,
     )
 
     user = models.ForeignKey(
         UserModel,
-        on_delete=models.RESTRICT,
+        on_delete=models.CASCADE,
     )
 
     class Meta:
@@ -39,12 +39,12 @@ class Comment(models.Model):
 class Like(models.Model):
     to_photo = models.ForeignKey(
         Photo,
-        on_delete=models.RESTRICT,
+        on_delete=models.CASCADE,
         null=False,
         blank=True,
     )
 
     user = models.ForeignKey(
         UserModel,
-        on_delete=models.RESTRICT,
+        on_delete=models.CASCADE,
     )
