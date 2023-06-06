@@ -33,7 +33,6 @@
                 </div>
 
                 <div class="data">
-                    <!-- Pet Total Photos -->
                     <span>{{ photos_count }}</span>
                     <p>photos</p>
 
@@ -59,12 +58,10 @@
             </div>
         </div>
     </div>
-
     <div class="pets">
         <div class="statuses">
 
             {% for pet in object.pet_set.all %}
-
                 <a href="{% url 'show pet details' pet_slug=pet.slug username=pet.user.username %}">
                     <div class="head-pet">
                         <div class="status">
@@ -77,11 +74,15 @@
                     </div>
                 </a>
             {% endfor %}
+
             {% if not object.pet_set.all %}
                 <img class="no-posts" src="{% static 'images/no_posts.png' %}" alt="no posts image">
             {% endif %}
+
         </div>
+
         <span style="font-size: 30px;color: #303636;font-weight: bold" class="current">Page {{ photos.number }}.</span>
+
         <div class="pet-photos">
             {% for pet_photo in photos %}
                 <a href="{% url 'show photo details' pk=pet_photo.pk %}">
@@ -90,7 +91,7 @@
                 </a>
             {% endfor %}
 
-            {#paginator#}
+            {# PAGINATOR #}
             <div class="pagination">
                 <span class="step-links">
                     {% if photos.has_previous %}
@@ -107,7 +108,6 @@
                     {% endif %}
                 </span>
             </div>
-
         </div>
 
     </div>
