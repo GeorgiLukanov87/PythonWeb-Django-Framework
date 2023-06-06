@@ -74,31 +74,22 @@
                             </div>
                         </div>
                         <p>{{ pet.name }}</p>
-
                     </div>
                 </a>
-
             {% endfor %}
             {% if not object.pet_set.all %}
                 <img class="no-posts" src="{% static 'images/no_posts.png' %}" alt="no posts image">
             {% endif %}
         </div>
+
+        <div class="pet-photos">
+        {% for pet_photo in object.photo_set.all %}
+            <a href="{% url 'show photo details' pk=pet_photo.pk %}">
+                <img src="/media/{{ pet_photo.photo }}" alt="pet img">
+            </a>
+        {% endfor %}
     </div>
-    <!-- End Pets Data Section -->
 
-    {#    <div class="pet-posts">#}
-    {##}
-    {#        <!-- IF Photos Start Pet Photos Post Section -->#}
-    {#        <!-- Start First Pet Photo Post -->#}
-    {#        {% include 'common/pets-posts.html' %}#}
-    {##}
-    {##}
-    {#        <!-- IF Photos End Pet Photos Post Section -->#}
-    {#        <!-- IF NOT Photos Show No Post Image -->#}
-    {##}
-    {#    </div>#}
-
-
-
+    </div>
 
 {% endblock %}

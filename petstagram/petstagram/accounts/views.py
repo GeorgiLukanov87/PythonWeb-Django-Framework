@@ -20,9 +20,7 @@ class SingInView(generic.CreateView):
     # when new user is created,auto-login
     def post(self, request, *args, **kwargs):
         response = super().post(request, *args, **kwargs)
-
         login(request, self.object)
-
         return response
 
 
