@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.contrib.auth import views as auth_views, get_user_model
+from django.contrib.auth import views as auth_views, get_user_model, login
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -16,6 +16,14 @@ class SingInView(generic.CreateView):
     template_name = 'accounts/register-page.html'
     form_class = UserCreateForm
     success_url = reverse_lazy('show index')
+
+    # when new user is created,auto-login
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+
+        login(request, self.object)
+
+        return response
 
 
 class SignOutView(auth_views.LogoutView):
