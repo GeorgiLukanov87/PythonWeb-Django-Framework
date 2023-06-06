@@ -98,7 +98,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: start;
     padding: 20px 0;
     overflow: auto;
     max-width: 850px;
@@ -179,3 +178,4 @@
 .step-links a:hover {
     text-shadow: none;
 }
+
