@@ -81,14 +81,34 @@
                 <img class="no-posts" src="{% static 'images/no_posts.png' %}" alt="no posts image">
             {% endif %}
         </div>
-
+        <span style="font-size: 30px" class="current">Page {{ photos.number }}.</span>
         <div class="pet-photos">
-        {% for pet_photo in object.photo_set.all %}
-            <a href="{% url 'show photo details' pk=pet_photo.pk %}">
-                <img src="/media/{{ pet_photo.photo }}" alt="pet img">
-            </a>
-        {% endfor %}
-    </div>
+            {% for pet_photo in photos %}
+                <a href="{% url 'show photo details' pk=pet_photo.pk %}">
+                    {# img src="/media/{{ pet_photo.photo }}" alt="pet img"> #}
+                    <img src="{{ pet_photo.photo.url }}" alt="pet img">
+                </a>
+            {% endfor %}
+
+            {#paginator#}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if photos.has_previous %}
+                        <a style="color: blue;font-size: 26px" href="?page=1">&laquo; first</a>
+                        <a style="color: red;font-size: 26px; font-weight: bold"
+                           href="?page={{ photos.previous_page_number }}">PREVIOUS</a>
+                    {% endif %}
+                    <span style="font-size: 30px"
+                          class="current">Page {{ photos.number }} of {{ photos.paginator.num_pages }}.</span>
+                    {% if photos.has_next %}
+                        <a style="color: red;font-size: 26px; font-weight: bold"
+                           href="?page={{ photos.next_page_number }}">NEXT</a>
+                        <a style="color: blue;font-size: 26px" href="?page={{ photos.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+
+        </div>
 
     </div>
 
