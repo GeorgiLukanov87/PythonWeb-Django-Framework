@@ -129,10 +129,13 @@ EMAIL_HOST_PASSWORD = 'rsmtntzfelfmighe'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 """
-solution->
+If you have this problem:
+~ smtpauthenticationerror at /accounts/register/ (535, b'5.7.8 username and password not accepted ~
+
+easy solution here(working 100%)->
 https://www.youtube.com/watch?v=gOr-RQcfjMQ&t=1s
 
-pass:
+New pass to send mails:
 rsmtntzfelfmighe
 
 """
