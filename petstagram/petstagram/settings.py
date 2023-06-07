@@ -118,5 +118,21 @@ LOGIN_REDIRECT_URL = reverse_lazy('show index')
 # EMAIL_PORT = 587
 # EMAIL_HOST_USER = 'petstragram.info.sender@gmail.com'
 # EMAIL_HOST_PASSWORD = 'petstagram.sender12345'
-#
 # DEFAULT_FROM_EMAIL = 'petstragram.info.sender@gmail.com'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'petstragram.info.sender@gmail.com'
+EMAIL_HOST_PASSWORD = 'rsmtntzfelfmighe'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+"""
+solution->
+https://www.youtube.com/watch?v=gOr-RQcfjMQ&t=1s
+
+pass:
+rsmtntzfelfmighe
+
+"""
