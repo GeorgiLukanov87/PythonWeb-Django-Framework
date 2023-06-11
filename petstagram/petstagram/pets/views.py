@@ -1,3 +1,5 @@
+from profile import Profile
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
@@ -85,13 +87,15 @@ def edit_pet(request, username, pet_slug):
 
 def delete_pet(request, username, pet_slug):
     pet = get_pet_by_name_and_username(pet_slug, username)
+    profile = pet.user
+
     if request.method == 'GET':
         form = PetDeleteForm(instance=pet)
     else:
         form = PetDeleteForm(request.POST, instance=pet)
         if form.is_valid():
             form.save()
-            return redirect('profile details', pk=1)
+            return redirect('profile details', pk=profile.pk)
 
     context = {
         'form': form,
