@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     'petstagram.accounts',
     'petstagram.common',
 
-    'petstagram.play_video',
+
 ]
 
 MIDDLEWARE = [
