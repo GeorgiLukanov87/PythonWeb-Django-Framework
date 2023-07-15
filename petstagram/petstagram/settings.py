@@ -23,9 +23,9 @@ INSTALLED_APPS = [
     'petstagram.pets',
     'petstagram.accounts',
     'petstagram.common',
+
+    'petstagram.play_video',
 ]
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

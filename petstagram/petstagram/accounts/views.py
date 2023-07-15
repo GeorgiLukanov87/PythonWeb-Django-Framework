@@ -19,9 +19,10 @@ class SingInView(generic.CreateView):
     success_url = reverse_lazy('show index')
 
     # when new user is created,auto-login
-    def post(self, request, *args, **kwargs):
-        response = super().post(request, *args, **kwargs)
-        login(request, self.object)
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        user = form.save()
+        login(self.request, user)
         return response
 
 
@@ -84,3 +85,5 @@ def to_github(request):
     return HttpResponseRedirect(
         "https://github.com/GeorgiLukanov87/PythonWeb-Django-Framework/tree/main/petstagram"
     )
+
+
